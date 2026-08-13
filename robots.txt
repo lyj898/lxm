@@ -1,0 +1,5 @@
+# Personal study archive - not for indexing.
+# Duplicated at the repo root so the deny-all applies whether Pages serves the
+# Actions artifact (site/ as the domain root) or the branch (repo as the root).
+User-agent: *
+Disallow: /
