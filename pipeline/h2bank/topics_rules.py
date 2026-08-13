@@ -114,13 +114,16 @@ RULES: dict[str, list[str]] = {
     ],
     "BINOM": [
         r"\bbinomial distribution\b",
-        r"\bB\s*\(\s*\d+\s*,",
+        # Must be exactly B(n, p) - a bare "B(n," also matches a labelled point
+        # such as "the point B(2, -3, 7)" in a vectors question. Digits may be
+        # space-separated because PDF extraction pulls them apart.
+        r"\bB\s*\(\s*[\d\s]{1,8},\s*[\d\s./]{1,10}\)",
         r"\bindependent trials\b|\bn\s+trials\b",
         r"\bat least\b.{0,30}\bsuccess|exactly\b.{0,30}\bsuccess",
     ],
     "NORM": [
         r"\bnormal(?:ly)? distribut",
-        r"\bN\s*\(\s*[\d.]+\s*,",
+        r"\bN\s*\(\s*[\d\s.]{1,10},\s*[\d\s.]{1,10}\)",
         r"\bz-?\s?score\b|\bstandardis(?:e|ed)\b",
         r"\bmean\b.{0,40}\bstandard deviation\b.{0,60}\bprobability\b",
     ],

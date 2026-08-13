@@ -83,6 +83,28 @@ def test_position_vectors_plural() -> None:
     assert "VEC" in match_topics("the points A, P and Q have position vectors a, p, q")
 
 
+def test_labelled_point_is_not_a_binomial_distribution() -> None:
+    """Regression, spotted on the live site: ACJC P1 Q9 is a planes question and
+    'the point B ( 2 , - 3 , 7 )' was tagged Binomial distribution."""
+    text = (
+        "Find the equations of the planes which are a distance of 3 2 from "
+        "the point B ( 2 , − 3 , 7 ) . [4]"
+    )
+    assert "BINOM" not in match_topics(text)
+
+
+def test_real_binomial_parameters_still_match() -> None:
+    """Tightening B(n, p) must not lose the genuine case, including the spaced
+    digits that PDF extraction produces."""
+    assert "BINOM" in match_topics("X follows B ( 1 0 , 0 . 3 5 ) .")
+    assert "BINOM" in match_topics("X ~ B(20, 0.4)")
+
+
+def test_labelled_point_is_not_a_normal_distribution() -> None:
+    assert "NORM" not in match_topics("the point N ( 1 , 2 , 5 ) lies on the line")
+    assert "NORM" in match_topics("X ~ N ( 50 , 16 )")
+
+
 def test_using_the_substitution_phrasing() -> None:
     """Regression: papers say 'Using the substitution', not 'by substitution'."""
     assert "INTT" in match_topics("(i) Using the substitution u = x^2 + 3, show that")
