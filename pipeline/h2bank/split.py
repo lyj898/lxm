@@ -28,7 +28,12 @@ from pathlib import Path
 from typing import Any
 
 from .config import Config, load_config
-from .db import init_db, replace_questions, set_parse_status
+from .db import (
+    init_db,
+    replace_questions,
+    set_parse_status,
+    update_question_geometry,
+)
 from .util import sha256_text
 
 log = logging.getLogger("h2bank.split")
@@ -44,6 +49,14 @@ QNUM_ONLY_RE = re.compile(r"^\s*(\d{1,2})\s*[.)]?\s*$")
 MARKS_RE = re.compile(r"[\[(](\d{1,2})[\])]\s*$")
 # Part labels at the start of a line, e.g. (i), (ii), (a), (b).
 PART_RE = re.compile(r"^\s*\(([ivx]{1,4}|[a-h])\)\s", re.IGNORECASE)
+# A line in a page margin that is only a page number.
+PAGE_NUMBER_RE = re.compile(r"^\s*\d{1,3}\s*$")
+# Recognisable exam furniture in the margins.
+BOILERPLATE_RE = re.compile(
+    r"(?:\bturn over\b|^\s*©|\b\d{4}/\d{2}(?:/[A-Z0-9]+)*\b|\bblank page\b"
+    r"|\bend of paper\b)",
+    re.IGNORECASE,
+)
 
 
 @dataclass
@@ -52,6 +65,8 @@ class Line:
     top: float
     x0: float
     text: str
+    bottom: float = 0.0
+    page_height: float = 842.0
 
 
 @dataclass
@@ -115,14 +130,68 @@ def extract_lines(pdf_path: Path, min_chars: int) -> tuple[list[Line], int, list
                         top=float(pl.get("top", 0.0)),
                         x0=float(pl.get("x0", 0.0)),
                         text=text,
+                        bottom=float(pl.get("bottom", pl.get("top", 0.0))),
+                        page_height=float(page.height),
                     )
                 )
+
+    # pdfplumber returns lines in text-object order, not reading order: a page
+    # footer can come back between the first and second line of a question. Sort
+    # into reading order or every question body is positionally scrambled.
+    lines.sort(key=lambda l: (l.page, round(l.top, 1), l.x0))
     return lines, n_pages, low_text
 
 
 # --------------------------------------------------------------------------
 # boundary detection
 # --------------------------------------------------------------------------
+
+def strip_boilerplate(
+    lines: list[Line], n_pages: int, gutter_max_x0: float = 120.0
+) -> tuple[list[Line], list[str]]:
+    """Drop running headers, footers and page numbers.
+
+    These sit in the top/bottom band of a page and repeat across pages, and they
+    were landing inside question text ("...solve the inequality ANGLO-CHINESE
+    JUNIOR COLLEGE 2025 H2 MATHEMATICS 9758/01 x x + 2..."), which pollutes both
+    search and the text sent to the tagger.
+    """
+    if n_pages < 2:
+        return lines, []
+
+    def in_band(l: Line) -> bool:
+        return l.top < l.page_height * 0.08 or l.bottom > l.page_height * 0.90
+
+    # A band line that shows up on several pages is furniture, not content.
+    pages_seen: dict[str, set[int]] = {}
+    for l in lines:
+        flat = re.sub(r"\s+", " ", l.text.strip())
+        # Bare numbers are excluded: HCI's Q5 is a lone "5" in the gutter and
+        # page 5's page number is also "5", so repetition would condemn the
+        # question. Short strings generally are too weak a signal - real running
+        # furniture is long.
+        if in_band(l) and len(flat) >= 8 and not PAGE_NUMBER_RE.match(flat):
+            pages_seen.setdefault(flat, set()).add(l.page)
+
+    threshold = max(2, int(n_pages * 0.4))
+    repeated = {t for t, pages in pages_seen.items() if len(pages) >= threshold}
+
+    dropped: list[str] = []
+    kept: list[Line] = []
+    for l in lines:
+        flat = re.sub(r"\s+", " ", l.text.strip())
+        # A bare number in the gutter is a question that happens to open near the
+        # top of a page (ACJC Q6, HCI Q5) - page numbers in these papers are
+        # centred, so only treat centred bare numbers as furniture.
+        bare_page_number = bool(PAGE_NUMBER_RE.match(flat)) and l.x0 > gutter_max_x0
+        if in_band(l) and (
+            flat in repeated or bare_page_number or BOILERPLATE_RE.search(flat)
+        ):
+            dropped.append(f"p{l.page}: {flat[:60]}")
+            continue
+        kept.append(l)
+    return kept, dropped
+
 
 def snap_to_modal_gutter(
     candidates: list[Candidate], tolerance: float
@@ -224,6 +293,7 @@ def build_questions(
         start = cand.line_index
         end = chain[idx + 1].line_index if idx + 1 < len(chain) else len(lines)
         body = lines[start:end]
+        cand_line = lines[start]
         text = "\n".join(l.text for l in body).strip()
 
         marks = [int(m.group(1)) for l in body if (m := MARKS_RE.search(l.text))]
@@ -241,16 +311,36 @@ def build_questions(
                 if label not in parts:
                     parts.append(label)
 
-        pages = {l.page for l in body} or {cand.page}
+        # Crop box for the site: from just above the question number down to the
+        # last line of its own content, so a rendered crop shows the diagrams and
+        # typeset maths that plain text cannot carry.
+        # Anchor the end on the last *substantive* line. Single letters and
+        # digits are usually diagram labels of the *next* question that sort
+        # ahead of its number, and they would drag the crop onto the next page.
+        substantive = [
+            l for l in body
+            if len(l.text.strip()) >= 3 and not PAGE_NUMBER_RE.match(l.text.strip())
+        ]
+        tail = substantive[-1] if substantive else cand_line
+        page_start, page_end = cand_line.page, tail.page
+        if page_end < page_start:
+            page_end = page_start
+        tail_lines = [l for l in substantive if l.page == page_end] or [cand_line]
+        y_top = max(0.0, cand_line.top - 8.0)
+        y_bottom = max(l.bottom for l in tail_lines) + 8.0
         questions.append(
             {
                 "q_number": cand.q_number,
                 "part_labels": parts,
-                "page_start": min(pages),
-                "page_end": max(pages),
+                "page_start": page_start,
+                "page_end": page_end,
+                "y_top": round(y_top, 2),
+                "y_bottom": round(y_bottom, 2),
                 "marks_total": sum(marks) if marks else None,
                 "full_text": text,
-                "needs_ocr": bool(pages & low_text),
+                "needs_ocr": bool(
+                    set(range(page_start, page_end + 1)) & low_text
+                ),
                 "extract_confidence": confidence,
                 "text_sha256": sha256_text(text),
             }
@@ -321,7 +411,10 @@ def split_pdf(pdf_path: Path, split_cfg: dict[str, Any]) -> SplitResult:
     exp_max = int(split_cfg.get("expected_questions_max", 12))
 
     lines, n_pages, low_text = extract_lines(pdf_path, min_chars)
+    lines, dropped = strip_boilerplate(lines, n_pages, gutter)
     result = SplitResult(pages=n_pages, needs_ocr_pages=low_text)
+    if dropped:
+        result.notes.append(f"stripped {len(dropped)} header/footer line(s)")
 
     if low_text:
         result.notes.append(
@@ -421,7 +514,13 @@ def run(cfg: Config, conn, only_ids: list[int] | None = None) -> list[dict[str, 
 
         if unchanged:
             n = len(old_sig)
-            log.info("  unchanged (%d questions); leaving rows and tags intact", n)
+            # The text is identical, but the crop geometry may have been
+            # recomputed by newer logic. Update it in place so tags survive.
+            moved = update_question_geometry(conn, row["id"], result.questions)
+            log.info(
+                "  unchanged (%d questions); tags intact%s",
+                n, f", {moved} crop box(es) refreshed" if moved else "",
+            )
         else:
             n = replace_questions(conn, row["id"], result.questions)
 

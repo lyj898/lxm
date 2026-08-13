@@ -148,16 +148,39 @@ button.ghost:hover { border-color: var(--accent); color: var(--accent); }
   padding: 3px 9px;
 }
 
+/* The question as rendered from the PDF. */
+.qfig {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.qfig canvas { display: block; width: 100%; height: auto; }
+.qfig[data-state="loading"], .qfig:not([data-state]) {
+  background:
+    linear-gradient(90deg, transparent, rgba(127, 127, 127, .08), transparent)
+    var(--card);
+}
+.fig-fallback { color: var(--ink-soft); font-size: .85rem; padding: 14px; margin: 0; }
+
+/* Extracted text: diagnostic view, monospaced so the mangling is obvious. */
 .qtext {
-  margin: 0;
+  margin: 10px 0 0;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
-  font-size: .92rem;
-  max-height: 8.5em;
-  overflow: hidden;
-  position: relative;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: .78rem;
+  color: var(--ink-soft);
+  background: var(--bg);
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  padding: 10px;
+  max-height: 16em;
+  overflow: auto;
 }
-.qtext.open { max-height: none; }
 
 .card-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
 .card-actions button, .card-actions a {

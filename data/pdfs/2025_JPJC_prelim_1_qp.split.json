@@ -20,6 +20,7 @@
     "total_marks": 100.0
   },
   "notes": [
+    "stripped 14 header/footer line(s)",
     "1 of 8 pages yielded <50 chars (pages [8]) - flagged needs_ocr, OCR not attempted"
   ],
   "questions": [
@@ -44,16 +45,16 @@
         "(i)",
         "(ii)"
       ],
-      "chars": 236,
+      "chars": 234,
       "first_line": "2 (i) Find, in terms of a, the roots of the equation"
     },
     {
       "q_number": 3,
       "page_start": 2,
-      "page_end": 3,
+      "page_end": 2,
       "marks_total": 4,
       "part_labels": [],
-      "chars": 325,
+      "chars": 323,
       "first_line": "3"
     },
     {
@@ -66,13 +67,13 @@
         "(ii)",
         "(iii)"
       ],
-      "chars": 358,
+      "chars": 384,
       "first_line": "4 Functions f and g are defined by"
     },
     {
       "q_number": 5,
       "page_start": 3,
-      "page_end": 4,
+      "page_end": 3,
       "marks_total": 9,
       "part_labels": [
         "(a)",
@@ -81,7 +82,7 @@
         "(iii)",
         "(b)"
       ],
-      "chars": 752,
+      "chars": 713,
       "first_line": "5 (a) The curves C"
     },
     {
@@ -93,7 +94,7 @@
         "(i)",
         "(ii)"
       ],
-      "chars": 333,
+      "chars": 345,
       "first_line": "6 (i) Find \uf0f2 x 2 e \u2212 2 x d x . [4]"
     },
     {
@@ -106,13 +107,13 @@
         "(ii)",
         "(b)"
       ],
-      "chars": 217,
+      "chars": 215,
       "first_line": "7 (a) (i) Find \uf0f2"
     },
     {
       "q_number": 8,
       "page_start": 4,
-      "page_end": 5,
+      "page_end": 4,
       "marks_total": 9,
       "part_labels": [
         "(a)",
@@ -121,7 +122,7 @@
         "(ii)",
         "(iii)"
       ],
-      "chars": 378,
+      "chars": 366,
       "first_line": "8 (a) The first three terms of a sequence are given by u =9,"
     },
     {
@@ -137,13 +138,13 @@
         "(v)",
         "(vi)"
       ],
-      "chars": 687,
+      "chars": 765,
       "first_line": "9 It is given that f(x) ="
     },
     {
       "q_number": 10,
       "page_start": 5,
-      "page_end": 6,
+      "page_end": 5,
       "marks_total": 9,
       "part_labels": [
         "(a)",
@@ -151,13 +152,13 @@
         "(i)",
         "(ii)"
       ],
-      "chars": 682,
+      "chars": 589,
       "first_line": "10 (a) Show that y = l n"
     },
     {
       "q_number": 11,
       "page_start": 6,
-      "page_end": 7,
+      "page_end": 6,
       "marks_total": 11,
       "part_labels": [
         "(i)",
@@ -166,13 +167,13 @@
         "(iv)",
         "(v)"
       ],
-      "chars": 1281,
+      "chars": 1279,
       "first_line": "11 A company posted a video on a social media platform to advertise a new product. The video"
     },
     {
       "q_number": 12,
       "page_start": 7,
-      "page_end": 8,
+      "page_end": 7,
       "marks_total": 12,
       "part_labels": [
         "(i)",
@@ -180,7 +181,7 @@
         "(iii)",
         "(iv)"
       ],
-      "chars": 1376,
+      "chars": 1363,
       "first_line": "12 A designer wants to construct an inclined roof that is attached to a vertical rectangular wall,"
     }
   ]

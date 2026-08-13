@@ -17,7 +17,9 @@
     "gaps": 0.0,
     "total_marks": 100.0
   },
-  "notes": [],
+  "notes": [
+    "stripped 4 header/footer line(s)"
+  ],
   "questions": [
     {
       "q_number": 1,
@@ -28,7 +30,7 @@
         "(a)",
         "(b)"
       ],
-      "chars": 227,
+      "chars": 261,
       "first_line": "1 The region A is bounded by the curves y = x + 1 , y = 7 \u2212 2 x , the x-axis and the"
     },
     {
@@ -40,13 +42,13 @@
         "(a)",
         "(b)"
       ],
-      "chars": 356,
+      "chars": 322,
       "first_line": "2 It is given that y l n s i n x"
     },
     {
       "q_number": 3,
       "page_start": 1,
-      "page_end": 2,
+      "page_end": 1,
       "marks_total": 13,
       "part_labels": [
         "(a)",
@@ -55,7 +57,7 @@
         "(d)",
         "(e)"
       ],
-      "chars": 568,
+      "chars": 566,
       "first_line": "3 The parametric equations of the curve C are"
     },
     {
@@ -89,14 +91,14 @@
     {
       "q_number": 6,
       "page_start": 2,
-      "page_end": 3,
+      "page_end": 2,
       "marks_total": 8,
       "part_labels": [
         "(a)",
         "(b)",
         "(c)"
       ],
-      "chars": 857,
+      "chars": 855,
       "first_line": "6 A basketball free throw game involves a team of two players, Ben and John. The game"
     },
     {
@@ -125,13 +127,13 @@
         "(c)",
         "(d)"
       ],
-      "chars": 1165,
+      "chars": 1163,
       "first_line": "8 A food producer claims that the mean mass of a can of beans it produces is 425 g."
     },
     {
       "q_number": 9,
       "page_start": 4,
-      "page_end": 5,
+      "page_end": 4,
       "marks_total": 12,
       "part_labels": [
         "(a)",
@@ -140,7 +142,7 @@
         "(d)",
         "(e)"
       ],
-      "chars": 1187,
+      "chars": 1185,
       "first_line": "9 In each round of a treasure hunt game, a player randomly selects a spot from a large"
     },
     {

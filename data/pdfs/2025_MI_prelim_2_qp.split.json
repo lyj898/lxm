@@ -17,7 +17,9 @@
     "gaps": 0.0,
     "total_marks": 100.0
   },
-  "notes": [],
+  "notes": [
+    "stripped 15 header/footer line(s)"
+  ],
   "questions": [
     {
       "q_number": 1,
@@ -31,20 +33,20 @@
         "(ii)",
         "(c)"
       ],
-      "chars": 702,
+      "chars": 666,
       "first_line": "1 The diagram shows the curve with equation"
     },
     {
       "q_number": 2,
       "page_start": 2,
-      "page_end": 3,
+      "page_end": 2,
       "marks_total": 8,
       "part_labels": [
         "(i)",
         "(ii)",
         "(iii)"
       ],
-      "chars": 296,
+      "chars": 294,
       "first_line": "2 A curve C has parametric equations x= t, y =t2 +4,where 0\uf0a3t \uf0a316."
     },
     {
@@ -56,7 +58,7 @@
         "(a)",
         "(b)"
       ],
-      "chars": 537,
+      "chars": 498,
       "first_line": "3 (a) The complex numbers z and w satisfy the simultaneous equations"
     },
     {
@@ -70,7 +72,7 @@
         "(c)",
         "(d)"
       ],
-      "chars": 474,
+      "chars": 498,
       "first_line": "4 A sequence is defined by T"
     },
     {
@@ -85,7 +87,7 @@
         "(iv)",
         "(v)"
       ],
-      "chars": 622,
+      "chars": 550,
       "first_line": "5 The function g is given by"
     },
     {
@@ -97,7 +99,7 @@
         "(i)",
         "(ii)"
       ],
-      "chars": 556,
+      "chars": 509,
       "first_line": "6 The waiting times for customers to get their pastries from a popular bakery is modelled"
     },
     {
@@ -117,7 +119,7 @@
     {
       "q_number": 8,
       "page_start": 5,
-      "page_end": 6,
+      "page_end": 5,
       "marks_total": 8,
       "part_labels": [
         "(i)",
@@ -127,7 +129,7 @@
         "(iii)",
         "(iv)"
       ],
-      "chars": 337,
+      "chars": 335,
       "first_line": "8 For events A and B, it is given that P(A)= , P(A\uf0c8B)= and P ( B A ) = ."
     },
     {
@@ -148,7 +150,7 @@
     {
       "q_number": 10,
       "page_start": 6,
-      "page_end": 7,
+      "page_end": 6,
       "marks_total": 9,
       "part_labels": [
         "(i)",
@@ -156,13 +158,13 @@
         "(b)",
         "(ii)"
       ],
-      "chars": 857,
+      "chars": 819,
       "first_line": "10 In this question you should state clearly all the distributions that you use, together"
     },
     {
       "q_number": 11,
       "page_start": 7,
-      "page_end": 8,
+      "page_end": 7,
       "marks_total": 10,
       "part_labels": [
         "(i)",
@@ -171,7 +173,7 @@
         "(iv)",
         "(v)"
       ],
-      "chars": 1408,
+      "chars": 1359,
       "first_line": "11 Cardiovascular fitness is commonly measured using VO max, the maximum amount"
     },
     {
@@ -185,7 +187,7 @@
         "(iii)",
         "(iv)"
       ],
-      "chars": 1355,
+      "chars": 1319,
       "first_line": "12 Supernova School is a school which specialises in sports. The mean reaction time of"
     }
   ]

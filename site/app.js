@@ -14,6 +14,7 @@ const DB_CANDIDATES = ["data/bank.sqlite", "../data/bank.sqlite"];
 
 const QUERY = `
   SELECT q.id, q.q_number, q.part_labels, q.page_start, q.page_end,
+         q.y_top, q.y_bottom,
          q.marks_total, q.full_text, q.needs_ocr, q.extract_confidence,
          p.school, p.school_code, p.year, p.paper_no, p.exam_type,
          p.rel_path AS qp_path,
@@ -96,6 +97,100 @@ function parseTags(blob) {
   });
 }
 
+// ------------------------------------------------------- question rendering
+//
+// Extracted text cannot carry this material: fractions linearise into nonsense
+// ("Find dx" for an integral), symbols like the integral sign and sigma are
+// dropped, and diagrams vanish entirely. So each card shows the question
+// rendered straight from the PDF, cropped to its own bounding box, and keeps the
+// text only for searching.
+
+const docCache = new Map();      // rel_path -> Promise<PDFDocumentProxy>
+const MAX_DPR = 2;
+
+function loadPaper(relPath) {
+  if (!docCache.has(relPath)) {
+    docCache.set(relPath, (async () => {
+      const lib = await getPdfjs();
+      return lib.getDocument({
+        url: dataRoot + relPath,
+        cMapUrl: `${PDFJS_BASE}cmaps/`,
+        cMapPacked: true,
+        standardFontDataUrl: `${PDFJS_BASE}standard_fonts/`,
+      }).promise;
+    })());
+  }
+  return docCache.get(relPath);
+}
+
+/** Render one page's slice of a question into a canvas sized to the crop. */
+async function renderSlice(doc, pageNo, yTop, yBottom, cssWidth) {
+  const page = await doc.getPage(pageNo);
+  const base = page.getViewport({ scale: 1 });
+  // A rotated page would invert the y mapping; fall back to the whole page.
+  const rotated = (page.rotate || 0) % 360 !== 0;
+  const top = rotated ? 0 : Math.max(0, yTop);
+  const bottom = rotated ? base.height : Math.min(base.height, yBottom);
+
+  const scale = cssWidth / base.width;
+  const dpr = Math.min(MAX_DPR, window.devicePixelRatio || 1);
+  const viewport = page.getViewport({ scale });
+  const sliceHeight = Math.max(12, (bottom - top) * scale);
+
+  const canvas = document.createElement("canvas");
+  canvas.width = Math.round(viewport.width * dpr);
+  canvas.height = Math.round(sliceHeight * dpr);
+  canvas.style.width = "100%";
+  canvas.style.height = "auto";
+
+  const ctx = canvas.getContext("2d");
+  ctx.fillStyle = "#fff";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  await page.render({
+    canvasContext: ctx,
+    viewport,
+    // Scale for the device, then shift the slice's top edge up to y = 0.
+    transform: [dpr, 0, 0, dpr, 0, -top * scale * dpr],
+  }).promise;
+  return canvas;
+}
+
+async function renderQuestion(figure, q) {
+  if (figure.dataset.state) return;
+  figure.dataset.state = "loading";
+  const width = Math.max(320, Math.min(900, figure.clientWidth || 640));
+  try {
+    const doc = await loadPaper(q.qp_path);
+    const canvases = [];
+    for (let p = q.page_start; p <= q.page_end; p++) {
+      const top = p === q.page_start ? q.y_top ?? 0 : 0;
+      const bottom = p === q.page_end ? q.y_bottom ?? 1e6 : 1e6;
+      canvases.push(await renderSlice(doc, p, top, bottom, width));
+    }
+    figure.replaceChildren(...canvases);
+    figure.dataset.state = "done";
+  } catch (err) {
+    figure.dataset.state = "error";
+    const note = document.createElement("p");
+    note.className = "fig-fallback";
+    note.textContent = "Could not render this question here — open the PDF instead.";
+    figure.replaceChildren(note);
+    console.error("render failed", q.id, err);
+  }
+}
+
+// Only render what the reader can actually see; 115 questions at once would be
+// pointless work.
+const figureObserver = new IntersectionObserver((entries) => {
+  for (const entry of entries) {
+    if (entry.isIntersecting) {
+      const fig = entry.target;
+      figureObserver.unobserve(fig);
+      renderQuestion(fig, fig._question);
+    }
+  }
+}, { rootMargin: "300px 0px" });
+
 // ---------------------------------------------------------------- rendering
 
 function optionsFor(select, values, label) {
@@ -144,9 +239,22 @@ function card(q) {
   head.appendChild(meta);
   el.appendChild(head);
 
-  const text = document.createElement("p");
+  // The question itself, rendered from the PDF.
+  const figure = document.createElement("div");
+  figure.className = "qfig";
+  figure.style.minHeight = `${Math.round(
+    Math.max(90, Math.min(700, ((q.y_bottom ?? 300) - (q.y_top ?? 0)) * 1.05)),
+  )}px`;
+  figure._question = q;
+  el.appendChild(figure);
+  figureObserver.observe(figure);
+
+  // Extracted text: kept for searching, shown on request. It is what the tagger
+  // reads, so being able to see it is useful, but it is not the primary view.
+  const text = document.createElement("pre");
   text.className = "qtext";
   text.textContent = q.full_text;
+  text.hidden = true;
   el.appendChild(text);
 
   const tags = document.createElement("div");
@@ -171,10 +279,11 @@ function card(q) {
 
   const toggle = document.createElement("button");
   toggle.type = "button";
-  toggle.textContent = "Show full text";
+  toggle.textContent = "Extracted text";
+  toggle.title = "The text used for searching and topic tagging";
   toggle.addEventListener("click", () => {
-    const open = text.classList.toggle("open");
-    toggle.textContent = open ? "Collapse text" : "Show full text";
+    text.hidden = !text.hidden;
+    toggle.textContent = text.hidden ? "Extracted text" : "Hide extracted text";
   });
   actions.appendChild(toggle);
 

@@ -20,6 +20,7 @@
     "total_marks": 100.0
   },
   "notes": [
+    "stripped 15 header/footer line(s)",
     "1 of 8 pages yielded <50 chars (pages [8]) - flagged needs_ocr, OCR not attempted"
   ],
   "questions": [
@@ -39,7 +40,7 @@
     {
       "q_number": 2,
       "page_start": 2,
-      "page_end": 3,
+      "page_end": 2,
       "marks_total": 10,
       "part_labels": [
         "(i)",
@@ -47,7 +48,7 @@
         "(iii)",
         "(iv)"
       ],
-      "chars": 664,
+      "chars": 662,
       "first_line": "2 With reference to the origin O, the points A, P and Q have position vectors a, p and q"
     },
     {
@@ -75,7 +76,7 @@
         "(i)",
         "(ii)"
       ],
-      "chars": 763,
+      "chars": 750,
       "first_line": "4 Do not use a calculator in answering this question."
     },
     {
@@ -94,7 +95,7 @@
     {
       "q_number": 6,
       "page_start": 4,
-      "page_end": 5,
+      "page_end": 4,
       "marks_total": 7,
       "part_labels": [
         "(i)",
@@ -102,7 +103,7 @@
         "(iii)",
         "(iv)"
       ],
-      "chars": 911,
+      "chars": 909,
       "first_line": "6 A particular streaming service platform claims that the average time a user spends watching"
     },
     {
@@ -129,7 +130,7 @@
         "(iii)",
         "(iv)"
       ],
-      "chars": 1335,
+      "chars": 1332,
       "first_line": "8 A company makes portable speakers. Some speakers turn out to be faulty. Each carton has 24"
     },
     {
@@ -142,13 +143,13 @@
         "(ii)",
         "(iii)"
       ],
-      "chars": 387,
+      "chars": 371,
       "first_line": "9 The events A and B are such that P(B)= ,"
     },
     {
       "q_number": 10,
       "page_start": 6,
-      "page_end": 7,
+      "page_end": 6,
       "marks_total": 12,
       "part_labels": [
         "(i)",
@@ -156,13 +157,13 @@
         "(iii)",
         "(iv)"
       ],
-      "chars": 1675,
+      "chars": 1673,
       "first_line": "10 In this question, you should state clearly all the distributions that you use, together with"
     },
     {
       "q_number": 11,
       "page_start": 7,
-      "page_end": 8,
+      "page_end": 7,
       "marks_total": 11,
       "part_labels": [
         "(a)",
@@ -174,7 +175,7 @@
         "(v)",
         "(vi)"
       ],
-      "chars": 1544,
+      "chars": 1531,
       "first_line": "11 (a) Draw separate scatter diagrams, each with 7 points, all in the first quadrant, which"
     }
   ]

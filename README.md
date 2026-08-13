@@ -81,6 +81,31 @@ In CI it comes from the repo secret of the same name
 (**Settings → Secrets and variables → Actions → New repository secret**).
 Without a key the tag stage warns and runs rules only.
 
+## How questions are displayed
+
+Extracted text cannot represent an exam question. Fractions linearise into
+nonsense (an integral comes out as `Find dx`), the integral and sigma signs land
+in a private-use glyph range and are lost, and diagrams disappear entirely — 73%
+of the pilot's questions show at least one of these, and 17 contain a figure.
+
+So the splitter records a **crop box** per question (`page_start`, `page_end`,
+`y_top`, `y_bottom` in PDF points from the page top), and the site renders that
+region straight from the PDF with pdf.js, lazily as cards scroll into view.
+Multi-page questions render as stacked per-page slices.
+
+The extracted text is still stored and is what powers **search** and **topic
+tagging**; each card can show it via "Extracted text". Two extraction hazards are
+handled in `split.py`, both found the hard way:
+
+- `pdfplumber.extract_text_lines()` returns **text-object order, not reading
+  order** — a page footer came back between the first and second line of a
+  question, so bodies were positionally scrambled. Lines are sorted by
+  `(page, top, x0)`.
+- Running headers and footers were landing inside question text. They are
+  stripped by band position plus repetition across pages, with bare numbers
+  excluded from the repetition rule (a lone `5` in the gutter is HCI's Q5, while
+  page 5's page number is also `5`).
+
 ## Viewing the site locally
 
 ```bash

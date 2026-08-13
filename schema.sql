@@ -41,6 +41,11 @@ CREATE TABLE IF NOT EXISTS questions (
     part_labels        TEXT,                 -- JSON array, e.g. ["(i)","(ii)"]
     page_start         INTEGER,              -- 1-based page index in the PDF
     page_end           INTEGER,
+    -- Crop box in PDF points from the top of the page, used by the site to
+    -- render the question straight from the PDF (diagrams and typeset maths
+    -- survive; extracted text cannot carry them).
+    y_top              REAL,
+    y_bottom           REAL,
     marks_total        INTEGER,
     full_text          TEXT NOT NULL,
     needs_ocr          INTEGER NOT NULL DEFAULT 0 CHECK (needs_ocr IN (0, 1)),

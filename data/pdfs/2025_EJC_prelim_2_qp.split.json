@@ -17,7 +17,9 @@
     "gaps": 0.0,
     "total_marks": 100.0
   },
-  "notes": [],
+  "notes": [
+    "stripped 7 header/footer line(s)"
+  ],
   "questions": [
     {
       "q_number": 1,
@@ -40,7 +42,7 @@
         "(a)",
         "(b)"
       ],
-      "chars": 336,
+      "chars": 346,
       "first_line": "2 A sequence u"
     },
     {
@@ -52,7 +54,7 @@
         "(a)",
         "(b)"
       ],
-      "chars": 417,
+      "chars": 459,
       "first_line": "3 The curve C"
     },
     {
@@ -66,7 +68,7 @@
         "(c)",
         "(d)"
       ],
-      "chars": 716,
+      "chars": 660,
       "first_line": "4 Relative to the origin O, point A has position vector given by a ="
     },
     {
@@ -85,14 +87,14 @@
     {
       "q_number": 6,
       "page_start": 4,
-      "page_end": 5,
+      "page_end": 4,
       "marks_total": 9,
       "part_labels": [
         "(a)",
         "(b)",
         "(c)"
       ],
-      "chars": 814,
+      "chars": 812,
       "first_line": "6 An online game consists of three stages. All players start with Stage 1, and no matter whether they win or lose,"
     },
     {
@@ -112,20 +114,20 @@
     {
       "q_number": 8,
       "page_start": 5,
-      "page_end": 6,
+      "page_end": 5,
       "marks_total": 10,
       "part_labels": [
         "(a)",
         "(b)",
         "(c)"
       ],
-      "chars": 646,
+      "chars": 644,
       "first_line": "8 (a) X is a random variable such that E ( X ) = 4 and E \uf0e9\uf0eb ( X \u2212 3 ) 2 \uf0f9\uf0fb = 4 0 . Find the value of V a r ( X ) . [3]"
     },
     {
       "q_number": 9,
       "page_start": 6,
-      "page_end": 7,
+      "page_end": 6,
       "marks_total": 11,
       "part_labels": [
         "(a)",
@@ -133,7 +135,7 @@
         "(c)",
         "(d)"
       ],
-      "chars": 1321,
+      "chars": 1319,
       "first_line": "9 The students in Eunoia Junior College (EJC) have been complaining of long queue times at the canteen during"
     },
     {

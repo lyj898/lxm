@@ -21,10 +21,24 @@ def connect(db_path: Path) -> sqlite3.Connection:
     return conn
 
 
+# Columns added after the first databases were created. CREATE TABLE IF NOT
+# EXISTS will not add them to an existing file, so apply them explicitly.
+_MIGRATIONS: tuple[tuple[str, str, str], ...] = (
+    ("questions", "y_top", "REAL"),
+    ("questions", "y_bottom", "REAL"),
+)
+
+
 def init_db(db_path: Path, schema_path: Path) -> sqlite3.Connection:
     """Create/refresh the schema. Safe to call repeatedly."""
     conn = connect(db_path)
     conn.executescript(schema_path.read_text(encoding="utf-8"))
+    for table, column, decl in _MIGRATIONS:
+        existing = {
+            r["name"] for r in conn.execute(f"PRAGMA table_info({table})")
+        }
+        if existing and column not in existing:
+            conn.execute(f"ALTER TABLE {table} ADD COLUMN {column} {decl}")
     conn.commit()
     return conn
 
@@ -102,6 +116,36 @@ def set_parse_status(
 # questions
 # --------------------------------------------------------------------------
 
+def update_question_geometry(
+    conn: sqlite3.Connection, paper_id: int, questions: Iterable[dict[str, Any]]
+) -> int:
+    """Refresh page/crop-box fields in place.
+
+    Used when the extracted text is identical but the geometry changed (e.g. the
+    crop-box logic improved). Updating rather than replacing keeps question ids
+    stable, so topic tags - which depend on the text, not the geometry - survive.
+    """
+    n = 0
+    for q in questions:
+        cur = conn.execute(
+            """UPDATE questions
+               SET page_start = ?, page_end = ?, y_top = ?, y_bottom = ?
+               WHERE paper_id = ? AND q_number = ?
+                 AND (page_start IS NOT ? OR page_end IS NOT ?
+                      OR y_top IS NOT ? OR y_bottom IS NOT ?)""",
+            (
+                q.get("page_start"), q.get("page_end"),
+                q.get("y_top"), q.get("y_bottom"),
+                paper_id, q["q_number"],
+                q.get("page_start"), q.get("page_end"),
+                q.get("y_top"), q.get("y_bottom"),
+            ),
+        )
+        n += cur.rowcount
+    conn.commit()
+    return n
+
+
 def replace_questions(
     conn: sqlite3.Connection, paper_id: int, questions: Iterable[dict[str, Any]]
 ) -> int:
@@ -115,12 +159,13 @@ def replace_questions(
     for q in questions:
         conn.execute(
             """INSERT INTO questions (paper_id, q_number, part_labels,
-                   page_start, page_end, marks_total, full_text, needs_ocr,
-                   extract_confidence, text_sha256)
-               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+                   page_start, page_end, y_top, y_bottom, marks_total,
+                   full_text, needs_ocr, extract_confidence, text_sha256)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
             (
                 paper_id, q["q_number"], json.dumps(q.get("part_labels", [])),
-                q.get("page_start"), q.get("page_end"), q.get("marks_total"),
+                q.get("page_start"), q.get("page_end"),
+                q.get("y_top"), q.get("y_bottom"), q.get("marks_total"),
                 q["full_text"], 1 if q.get("needs_ocr") else 0,
                 q.get("extract_confidence"), q["text_sha256"],
             ),

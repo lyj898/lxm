@@ -17,7 +17,9 @@
     "gaps": 0.0,
     "total_marks": 100.0
   },
-  "notes": [],
+  "notes": [
+    "stripped 19 header/footer line(s)"
+  ],
   "questions": [
     {
       "q_number": 1,
@@ -28,7 +30,7 @@
         "(a)",
         "(b)"
       ],
-      "chars": 191,
+      "chars": 144,
       "first_line": "1 (a) Without using a calculator, solve the inequality"
     },
     {
@@ -40,7 +42,7 @@
         "(a)",
         "(b)"
       ],
-      "chars": 311,
+      "chars": 295,
       "first_line": "2 The graph of y ="
     },
     {
@@ -67,14 +69,14 @@
     {
       "q_number": 5,
       "page_start": 2,
-      "page_end": 3,
+      "page_end": 2,
       "marks_total": 6,
       "part_labels": [
         "(a)",
         "(b)",
         "(c)"
       ],
-      "chars": 566,
+      "chars": 564,
       "first_line": "5 Relative to the origin O, the points A and B have non-zero and non-parallel position vectors"
     },
     {
@@ -86,7 +88,7 @@
         "(a)",
         "(b)"
       ],
-      "chars": 670,
+      "chars": 623,
       "first_line": "6"
     },
     {
@@ -98,7 +100,7 @@
         "(a)",
         "(b)"
       ],
-      "chars": 567,
+      "chars": 615,
       "first_line": "7 A freshly brewed cup of tea, initially at a temperature of 85\u00b0C, is left out to cool in a room"
     },
     {
@@ -113,7 +115,7 @@
         "(b)",
         "(i)"
       ],
-      "chars": 1202,
+      "chars": 1113,
       "first_line": "8 The curve with equation"
     },
     {
@@ -127,7 +129,7 @@
         "(c)",
         "(d)"
       ],
-      "chars": 757,
+      "chars": 648,
       "first_line": "9 The planes"
     },
     {
@@ -142,13 +144,13 @@
         "(ii)",
         "(iii)"
       ],
-      "chars": 678,
+      "chars": 758,
       "first_line": "10 Do not use a calculator in answering this question."
     },
     {
       "q_number": 11,
       "page_start": 6,
-      "page_end": 7,
+      "page_end": 6,
       "marks_total": 12,
       "part_labels": [
         "(a)",
@@ -157,13 +159,13 @@
         "(ii)",
         "(d)"
       ],
-      "chars": 950,
+      "chars": 809,
       "first_line": "11 The curve"
     },
     {
       "q_number": 12,
       "page_start": 7,
-      "page_end": 8,
+      "page_end": 7,
       "marks_total": 13,
       "part_labels": [
         "(a)",
@@ -172,7 +174,7 @@
         "(d)",
         "(e)"
       ],
-      "chars": 1673,
+      "chars": 1546,
       "first_line": "12 Sarah, a Singaporean Citizen, started a 4-year undergraduate Computing course at the"
     }
   ]

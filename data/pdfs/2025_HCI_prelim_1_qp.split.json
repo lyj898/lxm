@@ -17,7 +17,9 @@
     "gaps": 0.0,
     "total_marks": 100.0
   },
-  "notes": [],
+  "notes": [
+    "stripped 5 header/footer line(s)"
+  ],
   "questions": [
     {
       "q_number": 1,
@@ -25,7 +27,7 @@
       "page_end": 1,
       "marks_total": 4,
       "part_labels": [],
-      "chars": 172,
+      "chars": 170,
       "first_line": "1 A curve has equation y = x + 1 +"
     },
     {
@@ -34,7 +36,7 @@
       "page_end": 1,
       "marks_total": 5,
       "part_labels": [],
-      "chars": 275,
+      "chars": 338,
       "first_line": "2 A sequence of real numbers, x"
     },
     {
@@ -46,13 +48,13 @@
         "(a)",
         "(b)"
       ],
-      "chars": 282,
+      "chars": 219,
       "first_line": "3 It is given that"
     },
     {
       "q_number": 4,
       "page_start": 1,
-      "page_end": 2,
+      "page_end": 1,
       "marks_total": 6,
       "part_labels": [
         "(a)",
@@ -70,7 +72,7 @@
         "(a)",
         "(b)"
       ],
-      "chars": 762,
+      "chars": 770,
       "first_line": "5"
     },
     {
@@ -85,14 +87,14 @@
     {
       "q_number": 7,
       "page_start": 2,
-      "page_end": 3,
+      "page_end": 2,
       "marks_total": 7,
       "part_labels": [
         "(a)",
         "(b)",
         "(c)"
       ],
-      "chars": 211,
+      "chars": 199,
       "first_line": "7 (a) Use the formula listed in the List of Formulae (MF27) to explain why"
     },
     {
@@ -118,13 +120,13 @@
         "(a)",
         "(b)"
       ],
-      "chars": 201,
+      "chars": 203,
       "first_line": "9 (a) Find \uf0f2 ( 2 x \u2212 1 ) c o s x d x . [3]"
     },
     {
       "q_number": 10,
       "page_start": 3,
-      "page_end": 4,
+      "page_end": 3,
       "marks_total": 9,
       "part_labels": [
         "(a)",
@@ -132,7 +134,7 @@
         "(i)",
         "(ii)"
       ],
-      "chars": 816,
+      "chars": 812,
       "first_line": "10 (a) Express"
     },
     {
@@ -153,7 +155,7 @@
     {
       "q_number": 12,
       "page_start": 4,
-      "page_end": 5,
+      "page_end": 4,
       "marks_total": 12,
       "part_labels": [
         "(a)",
@@ -162,7 +164,7 @@
         "(d)",
         "(e)"
       ],
-      "chars": 756,
+      "chars": 754,
       "first_line": "12 Do not use a graphing calculator for this question."
     },
     {

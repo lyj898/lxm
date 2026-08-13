@@ -20,6 +20,7 @@
     "total_marks": 97.0
   },
   "notes": [
+    "stripped 16 header/footer line(s)",
     "1 of 8 pages yielded <50 chars (pages [8]) - flagged needs_ocr, OCR not attempted",
     "marks total 97, expected 100"
   ],
@@ -30,7 +31,7 @@
       "page_end": 2,
       "marks_total": 4,
       "part_labels": [],
-      "chars": 276,
+      "chars": 254,
       "first_line": "1 In this question you may use expansions from the List of Formulae (MF27)."
     },
     {
@@ -42,20 +43,20 @@
         "(i)",
         "(ii)"
       ],
-      "chars": 376,
+      "chars": 362,
       "first_line": "2 The diagram below shows the curve with equation y = f ( x ) where f ( x ) ="
     },
     {
       "q_number": 3,
       "page_start": 2,
-      "page_end": 3,
+      "page_end": 2,
       "marks_total": 7,
       "part_labels": [
         "(a)",
         "(b)",
         "(c)"
       ],
-      "chars": 87,
+      "chars": 85,
       "first_line": "3 (a) Find dx. [2]"
     },
     {
@@ -67,31 +68,31 @@
         "(i)",
         "(ii)"
       ],
-      "chars": 1057,
+      "chars": 1069,
       "first_line": "4 Three different blends of coffee beans \u2013 Blend A Blend B and Blend C \u2013 are sold at"
     },
     {
       "q_number": 5,
       "page_start": 3,
-      "page_end": 4,
+      "page_end": 3,
       "marks_total": 4,
       "part_labels": [
         "(i)",
         "(ii)"
       ],
-      "chars": 313,
+      "chars": 252,
       "first_line": "5 (i) Using the substitution show that"
     },
     {
       "q_number": 6,
       "page_start": 4,
-      "page_end": 5,
+      "page_end": 4,
       "marks_total": 7,
       "part_labels": [
         "(i)",
         "(ii)"
       ],
-      "chars": 518,
+      "chars": 480,
       "first_line": "6 A company produces customised badges. The diagram below shows the design of one"
     },
     {
@@ -105,20 +106,20 @@
         "(iii)",
         "(iv)"
       ],
-      "chars": 1157,
+      "chars": 1110,
       "first_line": "7 Epidemiologists are modelling the spread of an infectious disease in a town. The"
     },
     {
       "q_number": 8,
       "page_start": 5,
-      "page_end": 6,
+      "page_end": 5,
       "marks_total": 8,
       "part_labels": [
         "(i)",
         "(ii)",
         "(iii)"
       ],
-      "chars": 338,
+      "chars": 336,
       "first_line": "8 It is given that y=e ."
     },
     {
@@ -145,7 +146,7 @@
         "(ii)",
         "(iii)"
       ],
-      "chars": 362,
+      "chars": 375,
       "first_line": "10 The curves C and C are given by the equations"
     },
     {
@@ -160,7 +161,7 @@
         "(iv)",
         "(v)"
       ],
-      "chars": 788,
+      "chars": 690,
       "first_line": "11 Referred to the origin"
     },
     {
@@ -176,7 +177,7 @@
         "(v)",
         "(vi)"
       ],
-      "chars": 1088,
+      "chars": 1050,
       "first_line": "12 A tank initially contains 100 litres of pure water. A brine solution with a salt"
     }
   ]
