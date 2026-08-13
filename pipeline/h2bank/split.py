@@ -399,12 +399,35 @@ def run(cfg: Config, conn, only_ids: list[int] | None = None) -> list[dict[str, 
             set_parse_status(conn, row["id"], "failed", f"{type(exc).__name__}: {exc}")
             continue
 
-        n = replace_questions(conn, row["id"], result.questions)
         status = "ok" if result.questions and result.confidence >= 0.6 else (
             "partial" if result.questions else "failed"
         )
         notes = "; ".join(result.notes) or None
-        set_parse_status(conn, row["id"], status, notes)
+
+        # A re-split that finds exactly the same questions must not touch the
+        # database. Rewriting the rows reassigns question ids, which churns the
+        # committed binary on every scheduled run, and cascades away the topic
+        # tags for no reason.
+        old_sig = [
+            (r["q_number"], r["text_sha256"])
+            for r in conn.execute(
+                "SELECT q_number, text_sha256 FROM questions WHERE paper_id = ? "
+                "ORDER BY q_number",
+                (row["id"],),
+            )
+        ]
+        new_sig = [(q["q_number"], q["text_sha256"]) for q in result.questions]
+        unchanged = bool(old_sig) and old_sig == new_sig
+
+        if unchanged:
+            n = len(old_sig)
+            log.info("  unchanged (%d questions); leaving rows and tags intact", n)
+        else:
+            n = replace_questions(conn, row["id"], result.questions)
+
+        if not (unchanged and row["parse_status"] == status
+                and (row["parse_notes"] or None) == notes):
+            set_parse_status(conn, row["id"], status, notes)
 
         sidecar = sidecar_path(cfg, row["rel_path"])
         sidecar.write_text(
@@ -451,6 +474,7 @@ def run(cfg: Config, conn, only_ids: list[int] | None = None) -> list[dict[str, 
                 "confidence": result.confidence,
                 "signals": result.signals,
                 "status": status,
+                "unchanged": unchanged,
                 "flags": notes or "",
             }
         )
@@ -487,18 +511,22 @@ def main(argv: list[str] | None = None) -> int:
     summaries = run(cfg, conn, args.paper_ids)
     print_summary(summaries)
 
-    # Re-splitting replaces question rows, and question_topics cascades on
-    # delete - so a split always invalidates tags. Say so loudly: committing the
-    # database between these two stages ships a bank with no topics.
+    # Replacing a paper's questions cascades away its topic tags, so say so
+    # loudly: committing the database between these two stages ships a bank with
+    # missing topics, which is exactly what happened once.
     untagged = conn.execute(
         """SELECT COUNT(*) AS c FROM questions q
            WHERE NOT EXISTS (
                SELECT 1 FROM question_topics qt WHERE qt.question_id = q.id)"""
     ).fetchone()["c"]
+    replaced = [s for s in summaries if not s["unchanged"]]
+    if replaced:
+        print(f"\n{len(replaced)} paper(s) re-split, which dropped their topic tags.")
     if untagged:
         print(
-            f"\nWARNING: {untagged} question(s) now have no topic tag - splitting "
-            f"dropped them.\n         Run `python -m h2bank.tag` before committing "
+            f"\nWARNING: {untagged} of "
+            f"{sum(s['questions'] for s in summaries)} question(s) have no topic "
+            f"tag.\n         Run `python -m h2bank.tag` before committing "
             f"data/bank.sqlite."
         )
     conn.close()
