@@ -328,6 +328,18 @@ def build_questions(
         tail_lines = [l for l in substantive if l.page == page_end] or [cand_line]
         y_top = max(0.0, cand_line.top - 8.0)
         y_bottom = max(l.bottom for l in tail_lines) + 8.0
+
+        # Never run into the next question. Typeset maths puts fragments above
+        # their own baseline (a fraction's numerator), so a piece of the next
+        # question can sort into this body and drag y_bottom past its heading.
+        if idx + 1 < len(chain):
+            nxt = lines[chain[idx + 1].line_index]
+            if nxt.page == page_end:
+                y_bottom = min(y_bottom, nxt.top - 4.0)
+            elif nxt.page < page_end:
+                page_end = nxt.page
+                y_bottom = nxt.top - 4.0
+        y_bottom = max(y_bottom, y_top + 12.0) if page_start == page_end else y_bottom
         questions.append(
             {
                 "q_number": cand.q_number,

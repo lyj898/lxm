@@ -146,17 +146,53 @@ async function renderSlice(doc, pageNo, yTop, yBottom, cssWidth) {
   const ctx = canvas.getContext("2d");
   ctx.fillStyle = "#fff";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
-  await page.render({
+  const task = page.render({
     canvasContext: ctx,
     viewport,
     // Scale for the device, then shift the slice's top edge up to y = 0.
     transform: [dpr, 0, 0, dpr, 0, -top * scale * dpr],
-  }).promise;
+  });
+  // Watchdog: if the tab is hidden mid-render the rAF loop stops and this never
+  // settles, so bail out and let the visibility handler retry.
+  let timer;
+  try {
+    await Promise.race([
+      task.promise,
+      new Promise((_, reject) => {
+        timer = setTimeout(() => reject(new Error("render-timeout")), 12000);
+      }),
+    ]);
+  } finally {
+    clearTimeout(timer);
+  }
   return canvas;
+}
+
+// pdf.js drives its render loop with requestAnimationFrame, which never fires
+// while the page is hidden — a render started in a background tab hangs forever.
+// Hold those back and run them when the tab becomes visible.
+const deferredFigures = new Set();
+
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) return;
+  for (const fig of [...deferredFigures]) {
+    deferredFigures.delete(fig);
+    delete fig.dataset.state;
+    renderQuestion(fig, fig._question);
+  }
+});
+
+function deferFigure(figure) {
+  figure.dataset.state = "deferred";
+  deferredFigures.add(figure);
 }
 
 async function renderQuestion(figure, q) {
   if (figure.dataset.state) return;
+  if (document.hidden) {
+    deferFigure(figure);
+    return;
+  }
   figure.dataset.state = "loading";
   const width = Math.max(320, Math.min(900, figure.clientWidth || 640));
   try {
@@ -169,7 +205,14 @@ async function renderQuestion(figure, q) {
     }
     figure.replaceChildren(...canvases);
     figure.dataset.state = "done";
+    figure.style.minHeight = "";
   } catch (err) {
+    // A stalled render (tab hidden mid-flight) should be retried, not left blank.
+    if (err && err.message === "render-timeout") {
+      delete figure.dataset.state;
+      deferFigure(figure);
+      return;
+    }
     figure.dataset.state = "error";
     const note = document.createElement("p");
     note.className = "fig-fallback";
@@ -186,7 +229,8 @@ const figureObserver = new IntersectionObserver((entries) => {
     if (entry.isIntersecting) {
       const fig = entry.target;
       figureObserver.unobserve(fig);
-      renderQuestion(fig, fig._question);
+      if (document.hidden) deferFigure(fig);
+      else renderQuestion(fig, fig._question);
     }
   }
 }, { rootMargin: "300px 0px" });
