@@ -126,7 +126,11 @@ def test_rule_confidence_grows_and_is_capped() -> None:
 
 @pytest.fixture
 def tagger(seeded_topics: set[str]) -> LLMTagger:
-    return LLMTagger("claude-haiku-4-5", seeded_topics)
+    t = LLMTagger("claude-haiku-4-5", seeded_topics)
+    # Pre-seed the prompt's topic list so classify() never needs a connection,
+    # keeping these tests hermetic.
+    t._topic_list = "\n".join(f"  {code} - {code} (pure)" for code in sorted(seeded_topics))
+    return t
 
 
 def test_validate_accepts_clean_json(tagger: LLMTagger) -> None:
@@ -181,6 +185,83 @@ def test_validate_clamps_confidence(tagger: LLMTagger) -> None:
 )
 def test_validate_rejects_unusable_replies(tagger: LLMTagger, body: str) -> None:
     assert tagger._validate(body) is None
+
+
+# --------------------------------------------------------------------------
+# token accounting (stubbed client, no network)
+# --------------------------------------------------------------------------
+
+class _Usage:
+    def __init__(self, i: int, o: int) -> None:
+        self.input_tokens = i
+        self.output_tokens = o
+
+
+class _Block:
+    type = "text"
+
+    def __init__(self, text: str) -> None:
+        self.text = text
+
+
+class _Resp:
+    def __init__(self, text: str, i: int, o: int) -> None:
+        self.content = [_Block(text)]
+        self.usage = _Usage(i, o)
+
+
+class _FakeMessages:
+    def __init__(self, scripted: list[_Resp]) -> None:
+        self._scripted = scripted
+        self.calls = 0
+
+    def create(self, **_kwargs):
+        resp = self._scripted[min(self.calls, len(self._scripted) - 1)]
+        self.calls += 1
+        return resp
+
+
+class _FakeClient:
+    def __init__(self, scripted: list[_Resp]) -> None:
+        self.messages = _FakeMessages(scripted)
+
+
+def test_classify_reports_per_question_tokens(tagger: LLMTagger, monkeypatch) -> None:
+    """Regression: cache_put was handed the tagger's *running totals*, so the
+    cached ledger summed to about 11x the real spend."""
+    good = '{"topic_codes": ["VEC"], "confidence": 0.9}'
+    tagger._client = _FakeClient([_Resp(good, 500, 20)])
+
+    first = tagger.classify(None, "position vectors question")
+    assert first == ({"topic_codes": ["VEC"], "confidence": 0.9}, 500, 20)
+
+    # A second question must report its own usage, not the accumulated figure.
+    second = tagger.classify(None, "another question")
+    assert second[1] == 500 and second[2] == 20, (
+        f"per-question tokens leaked a running total: {second}"
+    )
+    # The tagger still tracks run totals separately.
+    assert tagger.input_tokens == 1000
+    assert tagger.output_tokens == 40
+    assert tagger.calls == 2
+
+
+def test_classify_counts_tokens_from_a_retried_reply(tagger: LLMTagger) -> None:
+    """A retry after unparseable JSON must add to that question's own count."""
+    tagger._client = _FakeClient([
+        _Resp("sorry, no json", 400, 10),
+        _Resp('{"topic_codes": ["CPLX"], "confidence": 0.6}', 450, 15),
+    ])
+    result, tin, tout = tagger.classify(None, "argand locus")
+    assert result is not None and result["topic_codes"] == ["CPLX"]
+    assert (tin, tout) == (850, 25)
+
+
+def test_classify_returns_none_when_every_attempt_is_unusable(tagger: LLMTagger) -> None:
+    tagger._client = _FakeClient([_Resp("still not json", 100, 5)])
+    result, tin, tout = tagger.classify(None, "whatever")
+    assert result is None
+    assert tin > 0 and tout > 0
 
 
 def test_missing_api_key_is_a_clear_error(tagger: LLMTagger, monkeypatch) -> None:

@@ -106,8 +106,13 @@ class LLMTagger:
             self._client = anthropic.Anthropic(api_key=api_key)
         return self._client
 
-    def classify(self, conn, text: str) -> dict[str, Any] | None:
-        """One API call, validated. Returns None if the model gave nothing usable."""
+    def classify(self, conn, text: str) -> tuple[dict[str, Any] | None, int, int]:
+        """Classify one question.
+
+        Returns (result, input_tokens, output_tokens) for **this question only**.
+        The per-question counts matter: they are what gets cached, and caching a
+        running total made the spend report sum to ~11x the real cost.
+        """
         from tenacity import retry, stop_after_attempt, wait_exponential
 
         prompt = USER_TEMPLATE.format(
@@ -124,11 +129,14 @@ class LLMTagger:
                 messages=[{"role": "user", "content": prompt + extra}],
             )
 
+        call_in = call_out = 0
         for attempt, extra in enumerate(
             ("", "\n\nYour previous reply was not valid JSON. Reply with JSON only.")
         ):
             resp = _call(extra)
             self.calls += 1
+            call_in += resp.usage.input_tokens
+            call_out += resp.usage.output_tokens
             self.input_tokens += resp.usage.input_tokens
             self.output_tokens += resp.usage.output_tokens
             body = "".join(
@@ -136,9 +144,9 @@ class LLMTagger:
             )
             parsed = self._validate(body)
             if parsed is not None:
-                return parsed
+                return parsed, call_in, call_out
             log.warning("unparseable LLM reply (attempt %d): %s", attempt + 1, body[:200])
-        return None
+        return None, call_in, call_out
 
     def _validate(self, body: str) -> dict[str, Any] | None:
         m = re.search(r"\{.*\}", body, re.DOTALL)
@@ -198,7 +206,7 @@ def run(cfg: Config, conn, use_llm: bool = True) -> dict[str, Any]:
             continue
         else:
             try:
-                cached = tagger.classify(conn, text)
+                cached, call_in, call_out = tagger.classify(conn, text)
             except Exception as exc:
                 log.error("LLM call failed for question %d: %s: %s",
                           qid, type(exc).__name__, exc)
@@ -209,8 +217,7 @@ def run(cfg: Config, conn, use_llm: bool = True) -> dict[str, Any]:
                 stats["llm_unusable"] += 1
                 untagged.append(qid)
                 continue
-            cache_put(conn, sha, model, cached,
-                      tagger.input_tokens, tagger.output_tokens)
+            cache_put(conn, sha, model, cached, call_in, call_out)
             stats["llm_new"] += 1
 
         conf = float(cached["confidence"])
