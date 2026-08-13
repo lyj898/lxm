@@ -1,0 +1,696 @@
+{
+  "n_groups": 8,
+  "groups": [
+    {
+      "exam_key": "ACJC|2025|prelim",
+      "school": "Anglo-Chinese Junior College",
+      "school_code": "ACJC",
+      "year": 2025,
+      "exam_type": "prelim",
+      "source": "sgtestpaper",
+      "papers": {
+        "1": [
+          "ms",
+          "qp"
+        ],
+        "2": [
+          "ms",
+          "qp"
+        ]
+      },
+      "complete_papers": 2,
+      "n_pdfs": 4,
+      "uncompressed_bytes": 1862776,
+      "links": [
+        {
+          "source": "sgtestpaper",
+          "file_url": "https://www.sgtestpaper.com/gce/test_papers_2025/jc2_math_h2_2025/JC2_Maths_H2_2025_ACJC.zip",
+          "page_url": "https://www.sgtestpaper.com/gce/2025/y25_jc2_Maths_h2_prelim_ACJC.html",
+          "title": "ACJC 2025 JC2 H2 Prelim Paper 1 QP.pdf",
+          "school": "Anglo-Chinese Junior College",
+          "school_code": "ACJC",
+          "year": 2025,
+          "exam_type": "prelim",
+          "paper_no": 1,
+          "doc_type": "qp",
+          "extra": {
+            "container": "zip",
+            "member": "ACJC 2025 JC2 H2 Prelim Paper 1 QP.pdf",
+            "member_bytes": 416268
+          },
+          "key": "ACJC|2025|prelim|1",
+          "exam_key": "ACJC|2025|prelim"
+        },
+        {
+          "source": "sgtestpaper",
+          "file_url": "https://www.sgtestpaper.com/gce/test_papers_2025/jc2_math_h2_2025/JC2_Maths_H2_2025_ACJC.zip",
+          "page_url": "https://www.sgtestpaper.com/gce/2025/y25_jc2_Maths_h2_prelim_ACJC.html",
+          "title": "ACJC 2025 H2 Prelims Paper 1 Solutions and Markers' Report.pdf",
+          "school": "Anglo-Chinese Junior College",
+          "school_code": "ACJC",
+          "year": 2025,
+          "exam_type": "prelim",
+          "paper_no": 1,
+          "doc_type": "ms",
+          "extra": {
+            "container": "zip",
+            "member": "ACJC 2025 H2 Prelims Paper 1 Solutions and Markers' Report.pdf",
+            "member_bytes": 648635
+          },
+          "key": "ACJC|2025|prelim|1",
+          "exam_key": "ACJC|2025|prelim"
+        },
+        {
+          "source": "sgtestpaper",
+          "file_url": "https://www.sgtestpaper.com/gce/test_papers_2025/jc2_math_h2_2025/JC2_Maths_H2_2025_ACJC.zip",
+          "page_url": "https://www.sgtestpaper.com/gce/2025/y25_jc2_Maths_h2_prelim_ACJC.html",
+          "title": "ACJC 2025 JC2 H2 Prelim Paper 2 QP.pdf",
+          "school": "Anglo-Chinese Junior College",
+          "school_code": "ACJC",
+          "year": 2025,
+          "exam_type": "prelim",
+          "paper_no": 2,
+          "doc_type": "qp",
+          "extra": {
+            "container": "zip",
+            "member": "ACJC 2025 JC2 H2 Prelim Paper 2 QP.pdf",
+            "member_bytes": 342084
+          },
+          "key": "ACJC|2025|prelim|2",
+          "exam_key": "ACJC|2025|prelim"
+        },
+        {
+          "source": "sgtestpaper",
+          "file_url": "https://www.sgtestpaper.com/gce/test_papers_2025/jc2_math_h2_2025/JC2_Maths_H2_2025_ACJC.zip",
+          "page_url": "https://www.sgtestpaper.com/gce/2025/y25_jc2_Maths_h2_prelim_ACJC.html",
+          "title": "ACJC 2025 JC2 H2 Prelim Paper 2 Solutions and Markers' Report.pdf",
+          "school": "Anglo-Chinese Junior College",
+          "school_code": "ACJC",
+          "year": 2025,
+          "exam_type": "prelim",
+          "paper_no": 2,
+          "doc_type": "ms",
+          "extra": {
+            "container": "zip",
+            "member": "ACJC 2025 JC2 H2 Prelim Paper 2 Solutions and Markers' Report.pdf",
+            "member_bytes": 455789
+          },
+          "key": "ACJC|2025|prelim|2",
+          "exam_key": "ACJC|2025|prelim"
+        }
+      ]
+    },
+    {
+      "exam_key": "EJC|2025|prelim",
+      "school": "Eunoia Junior College",
+      "school_code": "EJC",
+      "year": 2025,
+      "exam_type": "prelim",
+      "source": "sgtestpaper",
+      "papers": {
+        "1": [
+          "ms",
+          "qp"
+        ],
+        "2": [
+          "ms",
+          "qp"
+        ]
+      },
+      "complete_papers": 2,
+      "n_pdfs": 4,
+      "uncompressed_bytes": 1315332,
+      "links": [
+        {
+          "source": "sgtestpaper",
+          "file_url": "https://www.sgtestpaper.com/gce/test_papers_2025/jc2_math_h2_2025/JC2_Maths_H2_2025_EJC.zip",
+          "page_url": "https://www.sgtestpaper.com/gce/2025/y25_jc2_Maths_h2_prelim_EJC.html",
+          "title": "EJC_9758_2025_Prelim_P2_Solutions.pdf",
+          "school": "Eunoia Junior College",
+          "school_code": "EJC",
+          "year": 2025,
+          "exam_type": "prelim",
+          "paper_no": 2,
+          "doc_type": "ms",
+          "extra": {
+            "container": "zip",
+            "member": "EJC_9758_2025_Prelim_P2_Solutions.pdf",
+            "member_bytes": 347351
+          },
+          "key": "EJC|2025|prelim|2",
+          "exam_key": "EJC|2025|prelim"
+        },
+        {
+          "source": "sgtestpaper",
+          "file_url": "https://www.sgtestpaper.com/gce/test_papers_2025/jc2_math_h2_2025/JC2_Maths_H2_2025_EJC.zip",
+          "page_url": "https://www.sgtestpaper.com/gce/2025/y25_jc2_Maths_h2_prelim_EJC.html",
+          "title": "EJC_9758_2025_Prelim_P2.pdf",
+          "school": "Eunoia Junior College",
+          "school_code": "EJC",
+          "year": 2025,
+          "exam_type": "prelim",
+          "paper_no": 2,
+          "doc_type": "qp",
+          "extra": {
+            "container": "zip",
+            "member": "EJC_9758_2025_Prelim_P2.pdf",
+            "member_bytes": 323599
+          },
+          "key": "EJC|2025|prelim|2",
+          "exam_key": "EJC|2025|prelim"
+        },
+        {
+          "source": "sgtestpaper",
+          "file_url": "https://www.sgtestpaper.com/gce/test_papers_2025/jc2_math_h2_2025/JC2_Maths_H2_2025_EJC.zip",
+          "page_url": "https://www.sgtestpaper.com/gce/2025/y25_jc2_Maths_h2_prelim_EJC.html",
+          "title": "EJC_9758_2025_Prelim_P1.pdf",
+          "school": "Eunoia Junior College",
+          "school_code": "EJC",
+          "year": 2025,
+          "exam_type": "prelim",
+          "paper_no": 1,
+          "doc_type": "qp",
+          "extra": {
+            "container": "zip",
+            "member": "EJC_9758_2025_Prelim_P1.pdf",
+            "member_bytes": 331252
+          },
+          "key": "EJC|2025|prelim|1",
+          "exam_key": "EJC|2025|prelim"
+        },
+        {
+          "source": "sgtestpaper",
+          "file_url": "https://www.sgtestpaper.com/gce/test_papers_2025/jc2_math_h2_2025/JC2_Maths_H2_2025_EJC.zip",
+          "page_url": "https://www.sgtestpaper.com/gce/2025/y25_jc2_Maths_h2_prelim_EJC.html",
+          "title": "EJC_9758_2025_Prelim_P1_Solutions.pdf",
+          "school": "Eunoia Junior College",
+          "school_code": "EJC",
+          "year": 2025,
+          "exam_type": "prelim",
+          "paper_no": 1,
+          "doc_type": "ms",
+          "extra": {
+            "container": "zip",
+            "member": "EJC_9758_2025_Prelim_P1_Solutions.pdf",
+            "member_bytes": 313130
+          },
+          "key": "EJC|2025|prelim|1",
+          "exam_key": "EJC|2025|prelim"
+        }
+      ]
+    },
+    {
+      "exam_key": "HCI|2025|prelim",
+      "school": "Hwa Chong Institution",
+      "school_code": "HCI",
+      "year": 2025,
+      "exam_type": "prelim",
+      "source": "sgtestpaper",
+      "papers": {
+        "1": [
+          "ms",
+          "qp"
+        ],
+        "2": [
+          "ms",
+          "qp"
+        ]
+      },
+      "complete_papers": 2,
+      "n_pdfs": 4,
+      "uncompressed_bytes": 1660780,
+      "links": [
+        {
+          "source": "sgtestpaper",
+          "file_url": "https://www.sgtestpaper.com/gce/test_papers_2025/jc2_math_h2_2025/JC2_Maths_H2_2025_HCI.zip",
+          "page_url": "https://www.sgtestpaper.com/gce/2025/y25_jc2_Maths_h2_prelim_HCI.html",
+          "title": "HCI_9758_2025_Prelim Paper 2_Solutions.pdf",
+          "school": "Hwa Chong Institution",
+          "school_code": "HCI",
+          "year": 2025,
+          "exam_type": "prelim",
+          "paper_no": 2,
+          "doc_type": "ms",
+          "extra": {
+            "container": "zip",
+            "member": "HCI_9758_2025_Prelim Paper 2_Solutions.pdf",
+            "member_bytes": 614158
+          },
+          "key": "HCI|2025|prelim|2",
+          "exam_key": "HCI|2025|prelim"
+        },
+        {
+          "source": "sgtestpaper",
+          "file_url": "https://www.sgtestpaper.com/gce/test_papers_2025/jc2_math_h2_2025/JC2_Maths_H2_2025_HCI.zip",
+          "page_url": "https://www.sgtestpaper.com/gce/2025/y25_jc2_Maths_h2_prelim_HCI.html",
+          "title": "HCI_9758_2025_Prelim Paper 1_Solutions.pdf",
+          "school": "Hwa Chong Institution",
+          "school_code": "HCI",
+          "year": 2025,
+          "exam_type": "prelim",
+          "paper_no": 1,
+          "doc_type": "ms",
+          "extra": {
+            "container": "zip",
+            "member": "HCI_9758_2025_Prelim Paper 1_Solutions.pdf",
+            "member_bytes": 548978
+          },
+          "key": "HCI|2025|prelim|1",
+          "exam_key": "HCI|2025|prelim"
+        },
+        {
+          "source": "sgtestpaper",
+          "file_url": "https://www.sgtestpaper.com/gce/test_papers_2025/jc2_math_h2_2025/JC2_Maths_H2_2025_HCI.zip",
+          "page_url": "https://www.sgtestpaper.com/gce/2025/y25_jc2_Maths_h2_prelim_HCI.html",
+          "title": "HCI_9758_2025_Prelim Paper 2.pdf",
+          "school": "Hwa Chong Institution",
+          "school_code": "HCI",
+          "year": 2025,
+          "exam_type": "prelim",
+          "paper_no": 2,
+          "doc_type": "qp",
+          "extra": {
+            "container": "zip",
+            "member": "HCI_9758_2025_Prelim Paper 2.pdf",
+            "member_bytes": 239449
+          },
+          "key": "HCI|2025|prelim|2",
+          "exam_key": "HCI|2025|prelim"
+        },
+        {
+          "source": "sgtestpaper",
+          "file_url": "https://www.sgtestpaper.com/gce/test_papers_2025/jc2_math_h2_2025/JC2_Maths_H2_2025_HCI.zip",
+          "page_url": "https://www.sgtestpaper.com/gce/2025/y25_jc2_Maths_h2_prelim_HCI.html",
+          "title": "HCI_9758_2025_Prelim Paper 1.pdf",
+          "school": "Hwa Chong Institution",
+          "school_code": "HCI",
+          "year": 2025,
+          "exam_type": "prelim",
+          "paper_no": 1,
+          "doc_type": "qp",
+          "extra": {
+            "container": "zip",
+            "member": "HCI_9758_2025_Prelim Paper 1.pdf",
+            "member_bytes": 258195
+          },
+          "key": "HCI|2025|prelim|1",
+          "exam_key": "HCI|2025|prelim"
+        }
+      ]
+    },
+    {
+      "exam_key": "JPJC|2025|prelim",
+      "school": "Jurong Pioneer Junior College",
+      "school_code": "JPJC",
+      "year": 2025,
+      "exam_type": "prelim",
+      "source": "sgtestpaper",
+      "papers": {
+        "1": [
+          "ms",
+          "qp"
+        ],
+        "2": [
+          "ms",
+          "qp"
+        ]
+      },
+      "complete_papers": 2,
+      "n_pdfs": 4,
+      "uncompressed_bytes": 1691069,
+      "links": [
+        {
+          "source": "sgtestpaper",
+          "file_url": "https://www.sgtestpaper.com/gce/test_papers_2025/jc2_math_h2_2025/JC2_Maths_H2_2025_JPJC.zip",
+          "page_url": "https://www.sgtestpaper.com/gce/2025/y25_jc2_Maths_h2_prelim_JPJC.html",
+          "title": "2025 JPJC H2 Math Prelim P1 QP.pdf",
+          "school": "Jurong Pioneer Junior College",
+          "school_code": "JPJC",
+          "year": 2025,
+          "exam_type": "prelim",
+          "paper_no": 1,
+          "doc_type": "qp",
+          "extra": {
+            "container": "zip",
+            "member": "2025 JPJC H2 Math Prelim P1 QP.pdf",
+            "member_bytes": 366390
+          },
+          "key": "JPJC|2025|prelim|1",
+          "exam_key": "JPJC|2025|prelim"
+        },
+        {
+          "source": "sgtestpaper",
+          "file_url": "https://www.sgtestpaper.com/gce/test_papers_2025/jc2_math_h2_2025/JC2_Maths_H2_2025_JPJC.zip",
+          "page_url": "https://www.sgtestpaper.com/gce/2025/y25_jc2_Maths_h2_prelim_JPJC.html",
+          "title": "2025 JPJC H2 Math Prelim P2 QP.pdf",
+          "school": "Jurong Pioneer Junior College",
+          "school_code": "JPJC",
+          "year": 2025,
+          "exam_type": "prelim",
+          "paper_no": 2,
+          "doc_type": "qp",
+          "extra": {
+            "container": "zip",
+            "member": "2025 JPJC H2 Math Prelim P2 QP.pdf",
+            "member_bytes": 382161
+          },
+          "key": "JPJC|2025|prelim|2",
+          "exam_key": "JPJC|2025|prelim"
+        },
+        {
+          "source": "sgtestpaper",
+          "file_url": "https://www.sgtestpaper.com/gce/test_papers_2025/jc2_math_h2_2025/JC2_Maths_H2_2025_JPJC.zip",
+          "page_url": "https://www.sgtestpaper.com/gce/2025/y25_jc2_Maths_h2_prelim_JPJC.html",
+          "title": "2025 JPJC H2 Math Prelim P1 Solution.pdf",
+          "school": "Jurong Pioneer Junior College",
+          "school_code": "JPJC",
+          "year": 2025,
+          "exam_type": "prelim",
+          "paper_no": 1,
+          "doc_type": "ms",
+          "extra": {
+            "container": "zip",
+            "member": "2025 JPJC H2 Math Prelim P1 Solution.pdf",
+            "member_bytes": 468530
+          },
+          "key": "JPJC|2025|prelim|1",
+          "exam_key": "JPJC|2025|prelim"
+        },
+        {
+          "source": "sgtestpaper",
+          "file_url": "https://www.sgtestpaper.com/gce/test_papers_2025/jc2_math_h2_2025/JC2_Maths_H2_2025_JPJC.zip",
+          "page_url": "https://www.sgtestpaper.com/gce/2025/y25_jc2_Maths_h2_prelim_JPJC.html",
+          "title": "2025 JPJC Prelims Math Paper 2 Solutions.pdf",
+          "school": "Jurong Pioneer Junior College",
+          "school_code": "JPJC",
+          "year": 2025,
+          "exam_type": "prelim",
+          "paper_no": 2,
+          "doc_type": "ms",
+          "extra": {
+            "container": "zip",
+            "member": "2025 JPJC Prelims Math Paper 2 Solutions.pdf",
+            "member_bytes": 473988
+          },
+          "key": "JPJC|2025|prelim|2",
+          "exam_key": "JPJC|2025|prelim"
+        }
+      ]
+    },
+    {
+      "exam_key": "MI|2025|prelim",
+      "school": "Millennia Institute",
+      "school_code": "MI",
+      "year": 2025,
+      "exam_type": "prelim",
+      "source": "sgtestpaper",
+      "papers": {
+        "1": [
+          "ms",
+          "qp"
+        ],
+        "2": [
+          "ms",
+          "qp"
+        ]
+      },
+      "complete_papers": 2,
+      "n_pdfs": 4,
+      "uncompressed_bytes": 1720512,
+      "links": [
+        {
+          "source": "sgtestpaper",
+          "file_url": "https://www.sgtestpaper.com/gce/test_papers_2025/jc2_math_h2_2025/JC2_Maths_H2_2025_MI.zip",
+          "page_url": "https://www.sgtestpaper.com/gce/2025/y25_jc2_Maths_h2_prelim_MI.html",
+          "title": "MI 9758 2025 Prelim P2.pdf",
+          "school": "Millennia Institute",
+          "school_code": "MI",
+          "year": 2025,
+          "exam_type": "prelim",
+          "paper_no": 2,
+          "doc_type": "qp",
+          "extra": {
+            "container": "zip",
+            "member": "MI 9758 2025 Prelim P2.pdf",
+            "member_bytes": 386498
+          },
+          "key": "MI|2025|prelim|2",
+          "exam_key": "MI|2025|prelim"
+        },
+        {
+          "source": "sgtestpaper",
+          "file_url": "https://www.sgtestpaper.com/gce/test_papers_2025/jc2_math_h2_2025/JC2_Maths_H2_2025_MI.zip",
+          "page_url": "https://www.sgtestpaper.com/gce/2025/y25_jc2_Maths_h2_prelim_MI.html",
+          "title": "MI 9758 2025 Prelim P1 Solutions.pdf",
+          "school": "Millennia Institute",
+          "school_code": "MI",
+          "year": 2025,
+          "exam_type": "prelim",
+          "paper_no": 1,
+          "doc_type": "ms",
+          "extra": {
+            "container": "zip",
+            "member": "MI 9758 2025 Prelim P1 Solutions.pdf",
+            "member_bytes": 503613
+          },
+          "key": "MI|2025|prelim|1",
+          "exam_key": "MI|2025|prelim"
+        },
+        {
+          "source": "sgtestpaper",
+          "file_url": "https://www.sgtestpaper.com/gce/test_papers_2025/jc2_math_h2_2025/JC2_Maths_H2_2025_MI.zip",
+          "page_url": "https://www.sgtestpaper.com/gce/2025/y25_jc2_Maths_h2_prelim_MI.html",
+          "title": "MI 9758 2025 Prelim P1.pdf",
+          "school": "Millennia Institute",
+          "school_code": "MI",
+          "year": 2025,
+          "exam_type": "prelim",
+          "paper_no": 1,
+          "doc_type": "qp",
+          "extra": {
+            "container": "zip",
+            "member": "MI 9758 2025 Prelim P1.pdf",
+            "member_bytes": 381386
+          },
+          "key": "MI|2025|prelim|1",
+          "exam_key": "MI|2025|prelim"
+        },
+        {
+          "source": "sgtestpaper",
+          "file_url": "https://www.sgtestpaper.com/gce/test_papers_2025/jc2_math_h2_2025/JC2_Maths_H2_2025_MI.zip",
+          "page_url": "https://www.sgtestpaper.com/gce/2025/y25_jc2_Maths_h2_prelim_MI.html",
+          "title": "MI Prelims 2025 H2 Math Paper 2 Solutions.pdf",
+          "school": "Millennia Institute",
+          "school_code": "MI",
+          "year": 2025,
+          "exam_type": "prelim",
+          "paper_no": 2,
+          "doc_type": "ms",
+          "extra": {
+            "container": "zip",
+            "member": "MI Prelims 2025 H2 Math Paper 2 Solutions.pdf",
+            "member_bytes": 449015
+          },
+          "key": "MI|2025|prelim|2",
+          "exam_key": "MI|2025|prelim"
+        }
+      ]
+    },
+    {
+      "exam_key": "ASRJC|2025|prelim",
+      "school": "Anderson Serangoon Junior College",
+      "school_code": "ASRJC",
+      "year": 2025,
+      "exam_type": "prelim",
+      "source": "sgtestpaper",
+      "papers": {
+        "1": [
+          "qp"
+        ],
+        "2": [
+          "qp"
+        ]
+      },
+      "complete_papers": 0,
+      "n_pdfs": 3,
+      "uncompressed_bytes": 38453098,
+      "links": [
+        {
+          "source": "sgtestpaper",
+          "file_url": "https://www.sgtestpaper.com/gce/test_papers_2025/jc2_math_h2_2025/JC2_Maths_H2_2025_ASRJC.zip",
+          "page_url": "https://www.sgtestpaper.com/gce/2025/y25_jc2_Maths_h2_prelim_ASRJC.html",
+          "title": "ASRJC H2 Math Prelim Paper 2-1.pdf",
+          "school": "Anderson Serangoon Junior College",
+          "school_code": "ASRJC",
+          "year": 2025,
+          "exam_type": "prelim",
+          "paper_no": 2,
+          "doc_type": "qp",
+          "extra": {
+            "container": "zip",
+            "member": "ASRJC H2 Math Prelim Paper 2-1.pdf",
+            "member_bytes": 14550139
+          },
+          "key": "ASRJC|2025|prelim|2",
+          "exam_key": "ASRJC|2025|prelim"
+        },
+        {
+          "source": "sgtestpaper",
+          "file_url": "https://www.sgtestpaper.com/gce/test_papers_2025/jc2_math_h2_2025/JC2_Maths_H2_2025_ASRJC.zip",
+          "page_url": "https://www.sgtestpaper.com/gce/2025/y25_jc2_Maths_h2_prelim_ASRJC.html",
+          "title": "ASRJC H2 Math Prelim Paper 2.pdf",
+          "school": "Anderson Serangoon Junior College",
+          "school_code": "ASRJC",
+          "year": 2025,
+          "exam_type": "prelim",
+          "paper_no": 2,
+          "doc_type": "qp",
+          "extra": {
+            "container": "zip",
+            "member": "ASRJC H2 Math Prelim Paper 2.pdf",
+            "member_bytes": 14550139
+          },
+          "key": "ASRJC|2025|prelim|2",
+          "exam_key": "ASRJC|2025|prelim"
+        },
+        {
+          "source": "sgtestpaper",
+          "file_url": "https://www.sgtestpaper.com/gce/test_papers_2025/jc2_math_h2_2025/JC2_Maths_H2_2025_ASRJC.zip",
+          "page_url": "https://www.sgtestpaper.com/gce/2025/y25_jc2_Maths_h2_prelim_ASRJC.html",
+          "title": "H2 Math ASRJC Prelim 2025 P1.pdf",
+          "school": "Anderson Serangoon Junior College",
+          "school_code": "ASRJC",
+          "year": 2025,
+          "exam_type": "prelim",
+          "paper_no": 1,
+          "doc_type": "qp",
+          "extra": {
+            "container": "zip",
+            "member": "H2 Math ASRJC Prelim 2025 P1.pdf",
+            "member_bytes": 9352820
+          },
+          "key": "ASRJC|2025|prelim|1",
+          "exam_key": "ASRJC|2025|prelim"
+        }
+      ]
+    },
+    {
+      "exam_key": "CJC|2025|prelim",
+      "school": "Catholic Junior College",
+      "school_code": "CJC",
+      "year": 2025,
+      "exam_type": "prelim",
+      "source": "sgtestpaper",
+      "papers": {
+        "1": [
+          "ms"
+        ],
+        "2": [
+          "ms"
+        ]
+      },
+      "complete_papers": 0,
+      "n_pdfs": 2,
+      "uncompressed_bytes": 1212595,
+      "links": [
+        {
+          "source": "sgtestpaper",
+          "file_url": "https://www.sgtestpaper.com/gce/test_papers_2025/jc2_math_h2_2025/JC2_Maths_H2_2025_CJC.zip",
+          "page_url": "https://www.sgtestpaper.com/gce/2025/y25_jc2_Maths_h2_prelim_CJC.html",
+          "title": "2025 CJC JC2 H2 Math Prelim Paper 2 answer key.pdf",
+          "school": "Catholic Junior College",
+          "school_code": "CJC",
+          "year": 2025,
+          "exam_type": "prelim",
+          "paper_no": 2,
+          "doc_type": "ms",
+          "extra": {
+            "container": "zip",
+            "member": "2025 CJC JC2 H2 Math Prelim Paper 2 answer key.pdf",
+            "member_bytes": 607389
+          },
+          "key": "CJC|2025|prelim|2",
+          "exam_key": "CJC|2025|prelim"
+        },
+        {
+          "source": "sgtestpaper",
+          "file_url": "https://www.sgtestpaper.com/gce/test_papers_2025/jc2_math_h2_2025/JC2_Maths_H2_2025_CJC.zip",
+          "page_url": "https://www.sgtestpaper.com/gce/2025/y25_jc2_Maths_h2_prelim_CJC.html",
+          "title": "2025 CJC JC2 H2 Math Prelim Paper 1 answer key.pdf",
+          "school": "Catholic Junior College",
+          "school_code": "CJC",
+          "year": 2025,
+          "exam_type": "prelim",
+          "paper_no": 1,
+          "doc_type": "ms",
+          "extra": {
+            "container": "zip",
+            "member": "2025 CJC JC2 H2 Math Prelim Paper 1 answer key.pdf",
+            "member_bytes": 605206
+          },
+          "key": "CJC|2025|prelim|1",
+          "exam_key": "CJC|2025|prelim"
+        }
+      ]
+    },
+    {
+      "exam_key": "DHS|2025|prelim",
+      "school": "Dunman High School",
+      "school_code": "DHS",
+      "year": 2025,
+      "exam_type": "prelim",
+      "source": "sgtestpaper",
+      "papers": {
+        "1": [
+          "ms"
+        ],
+        "2": [
+          "ms"
+        ]
+      },
+      "complete_papers": 0,
+      "n_pdfs": 2,
+      "uncompressed_bytes": 1788326,
+      "links": [
+        {
+          "source": "sgtestpaper",
+          "file_url": "https://www.sgtestpaper.com/gce/test_papers_2025/jc2_math_h2_2025/JC2_Maths_H2_2025_DHS.zip",
+          "page_url": "https://www.sgtestpaper.com/gce/2025/y25_jc2_Maths_h2_prelim_DHS.html",
+          "title": "2025 DHS H2 Math Prelim P2 Soln.pdf",
+          "school": "Dunman High School",
+          "school_code": "DHS",
+          "year": 2025,
+          "exam_type": "prelim",
+          "paper_no": 2,
+          "doc_type": "ms",
+          "extra": {
+            "container": "zip",
+            "member": "2025 DHS H2 Math Prelim P2 Soln.pdf",
+            "member_bytes": 920307
+          },
+          "key": "DHS|2025|prelim|2",
+          "exam_key": "DHS|2025|prelim"
+        },
+        {
+          "source": "sgtestpaper",
+          "file_url": "https://www.sgtestpaper.com/gce/test_papers_2025/jc2_math_h2_2025/JC2_Maths_H2_2025_DHS.zip",
+          "page_url": "https://www.sgtestpaper.com/gce/2025/y25_jc2_Maths_h2_prelim_DHS.html",
+          "title": "2025 DHS H2 Math Prelim P1 Soln.pdf",
+          "school": "Dunman High School",
+          "school_code": "DHS",
+          "year": 2025,
+          "exam_type": "prelim",
+          "paper_no": 1,
+          "doc_type": "ms",
+          "extra": {
+            "container": "zip",
+            "member": "2025 DHS H2 Math Prelim P1 Soln.pdf",
+            "member_bytes": 868019
+          },
+          "key": "DHS|2025|prelim|1",
+          "exam_key": "DHS|2025|prelim"
+        }
+      ]
+    }
+  ]
+}

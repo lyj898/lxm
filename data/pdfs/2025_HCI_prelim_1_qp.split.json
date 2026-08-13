@@ -1,0 +1,184 @@
+{
+  "paper_id": 12,
+  "rel_path": "data/pdfs/2025_HCI_prelim_1_qp.pdf",
+  "school_code": "HCI",
+  "year": 2025,
+  "paper_no": 1,
+  "doc_type": "qp",
+  "pages": 5,
+  "needs_ocr_pages": [],
+  "confidence": 1.0,
+  "signals": {
+    "numbering": 1.0,
+    "sequence": 1.0,
+    "marks": 1.0,
+    "count": 1.0,
+    "marks_sum": 1.0,
+    "gaps": 0.0,
+    "total_marks": 100.0
+  },
+  "notes": [],
+  "questions": [
+    {
+      "q_number": 1,
+      "page_start": 1,
+      "page_end": 1,
+      "marks_total": 4,
+      "part_labels": [],
+      "chars": 172,
+      "first_line": "1 A curve has equation y = x + 1 +"
+    },
+    {
+      "q_number": 2,
+      "page_start": 1,
+      "page_end": 1,
+      "marks_total": 5,
+      "part_labels": [],
+      "chars": 275,
+      "first_line": "2 A sequence of real numbers, x"
+    },
+    {
+      "q_number": 3,
+      "page_start": 1,
+      "page_end": 1,
+      "marks_total": 6,
+      "part_labels": [
+        "(a)",
+        "(b)"
+      ],
+      "chars": 282,
+      "first_line": "3 It is given that"
+    },
+    {
+      "q_number": 4,
+      "page_start": 1,
+      "page_end": 2,
+      "marks_total": 6,
+      "part_labels": [
+        "(a)",
+        "(b)"
+      ],
+      "chars": 535,
+      "first_line": "4 The diagram shows a sketch of the function f(x)=e3x +1, for 0 \uf0a3 x \uf0a3 1 The region"
+    },
+    {
+      "q_number": 5,
+      "page_start": 2,
+      "page_end": 2,
+      "marks_total": 6,
+      "part_labels": [
+        "(a)",
+        "(b)"
+      ],
+      "chars": 762,
+      "first_line": "5"
+    },
+    {
+      "q_number": 6,
+      "page_start": 2,
+      "page_end": 2,
+      "marks_total": 7,
+      "part_labels": [],
+      "chars": 342,
+      "first_line": "6 Given that b is a real constant such that 0\uf03cb\uf03c4 , describe fully a sequence of"
+    },
+    {
+      "q_number": 7,
+      "page_start": 2,
+      "page_end": 3,
+      "marks_total": 7,
+      "part_labels": [
+        "(a)",
+        "(b)",
+        "(c)"
+      ],
+      "chars": 211,
+      "first_line": "7 (a) Use the formula listed in the List of Formulae (MF27) to explain why"
+    },
+    {
+      "q_number": 8,
+      "page_start": 3,
+      "page_end": 3,
+      "marks_total": 7,
+      "part_labels": [
+        "(a)",
+        "(b)",
+        "(c)",
+        "(d)"
+      ],
+      "chars": 387,
+      "first_line": "8 The function f is defined by"
+    },
+    {
+      "q_number": 9,
+      "page_start": 3,
+      "page_end": 3,
+      "marks_total": 7,
+      "part_labels": [
+        "(a)",
+        "(b)"
+      ],
+      "chars": 201,
+      "first_line": "9 (a) Find \uf0f2 ( 2 x \u2212 1 ) c o s x d x . [3]"
+    },
+    {
+      "q_number": 10,
+      "page_start": 3,
+      "page_end": 4,
+      "marks_total": 9,
+      "part_labels": [
+        "(a)",
+        "(b)",
+        "(i)",
+        "(ii)"
+      ],
+      "chars": 816,
+      "first_line": "10 (a) Express"
+    },
+    {
+      "q_number": 11,
+      "page_start": 4,
+      "page_end": 4,
+      "marks_total": 12,
+      "part_labels": [
+        "(a)",
+        "(b)",
+        "(c)",
+        "(d)",
+        "(e)"
+      ],
+      "chars": 749,
+      "first_line": "11 The points A and B have coordinates ( 1 5 , 3 , 0 ) and (5,9,5) respectively. Two lines l"
+    },
+    {
+      "q_number": 12,
+      "page_start": 4,
+      "page_end": 5,
+      "marks_total": 12,
+      "part_labels": [
+        "(a)",
+        "(b)",
+        "(c)",
+        "(d)",
+        "(e)"
+      ],
+      "chars": 756,
+      "first_line": "12 Do not use a graphing calculator for this question."
+    },
+    {
+      "q_number": 13,
+      "page_start": 5,
+      "page_end": 5,
+      "marks_total": 12,
+      "part_labels": [
+        "(a)",
+        "(b)",
+        "(c)",
+        "(d)",
+        "(e)"
+      ],
+      "chars": 1402,
+      "first_line": "13 Frederick, a social media influencer, is starting a new online account at the start of a"
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "paper_id": 17,
+  "rel_path": "data/pdfs/2025_MI_prelim_2_qp.pdf",
+  "school_code": "MI",
+  "year": 2025,
+  "paper_no": 2,
+  "doc_type": "qp",
+  "pages": 8,
+  "needs_ocr_pages": [],
+  "confidence": 1.0,
+  "signals": {
+    "numbering": 1.0,
+    "sequence": 1.0,
+    "marks": 1.0,
+    "count": 1.0,
+    "marks_sum": 1.0,
+    "gaps": 0.0,
+    "total_marks": 100.0
+  },
+  "notes": [],
+  "questions": [
+    {
+      "q_number": 1,
+      "page_start": 2,
+      "page_end": 2,
+      "marks_total": 6,
+      "part_labels": [
+        "(a)",
+        "(b)",
+        "(i)",
+        "(ii)",
+        "(c)"
+      ],
+      "chars": 702,
+      "first_line": "1 The diagram shows the curve with equation"
+    },
+    {
+      "q_number": 2,
+      "page_start": 2,
+      "page_end": 3,
+      "marks_total": 8,
+      "part_labels": [
+        "(i)",
+        "(ii)",
+        "(iii)"
+      ],
+      "chars": 296,
+      "first_line": "2 A curve C has parametric equations x= t, y =t2 +4,where 0\uf0a3t \uf0a316."
+    },
+    {
+      "q_number": 3,
+      "page_start": 3,
+      "page_end": 3,
+      "marks_total": 8,
+      "part_labels": [
+        "(a)",
+        "(b)"
+      ],
+      "chars": 537,
+      "first_line": "3 (a) The complex numbers z and w satisfy the simultaneous equations"
+    },
+    {
+      "q_number": 4,
+      "page_start": 3,
+      "page_end": 4,
+      "marks_total": 8,
+      "part_labels": [
+        "(a)",
+        "(b)",
+        "(c)",
+        "(d)"
+      ],
+      "chars": 474,
+      "first_line": "4 A sequence is defined by T"
+    },
+    {
+      "q_number": 5,
+      "page_start": 4,
+      "page_end": 5,
+      "marks_total": 10,
+      "part_labels": [
+        "(i)",
+        "(ii)",
+        "(iii)",
+        "(iv)",
+        "(v)"
+      ],
+      "chars": 622,
+      "first_line": "5 The function g is given by"
+    },
+    {
+      "q_number": 6,
+      "page_start": 5,
+      "page_end": 5,
+      "marks_total": 4,
+      "part_labels": [
+        "(i)",
+        "(ii)"
+      ],
+      "chars": 556,
+      "first_line": "6 The waiting times for customers to get their pastries from a popular bakery is modelled"
+    },
+    {
+      "q_number": 7,
+      "page_start": 5,
+      "page_end": 5,
+      "marks_total": 8,
+      "part_labels": [
+        "(i)",
+        "(ii)",
+        "(iii)",
+        "(iv)"
+      ],
+      "chars": 815,
+      "first_line": "7 A deck of 12 cards consists of 2 gold cards and 10 silver cards. The cards are identical"
+    },
+    {
+      "q_number": 8,
+      "page_start": 5,
+      "page_end": 6,
+      "marks_total": 8,
+      "part_labels": [
+        "(i)",
+        "(a)",
+        "(b)",
+        "(ii)",
+        "(iii)",
+        "(iv)"
+      ],
+      "chars": 337,
+      "first_line": "8 For events A and B, it is given that P(A)= , P(A\uf0c8B)= and P ( B A ) = ."
+    },
+    {
+      "q_number": 9,
+      "page_start": 6,
+      "page_end": 6,
+      "marks_total": 9,
+      "part_labels": [
+        "(i)",
+        "(ii)",
+        "(iii)",
+        "(a)",
+        "(b)"
+      ],
+      "chars": 1068,
+      "first_line": "9 In a particular stage of a computer game, a player is given a first set of 20 tasks,"
+    },
+    {
+      "q_number": 10,
+      "page_start": 6,
+      "page_end": 7,
+      "marks_total": 9,
+      "part_labels": [
+        "(i)",
+        "(a)",
+        "(b)",
+        "(ii)"
+      ],
+      "chars": 857,
+      "first_line": "10 In this question you should state clearly all the distributions that you use, together"
+    },
+    {
+      "q_number": 11,
+      "page_start": 7,
+      "page_end": 8,
+      "marks_total": 10,
+      "part_labels": [
+        "(i)",
+        "(ii)",
+        "(iii)",
+        "(iv)",
+        "(v)"
+      ],
+      "chars": 1408,
+      "first_line": "11 Cardiovascular fitness is commonly measured using VO max, the maximum amount"
+    },
+    {
+      "q_number": 12,
+      "page_start": 8,
+      "page_end": 8,
+      "marks_total": 12,
+      "part_labels": [
+        "(i)",
+        "(ii)",
+        "(iii)",
+        "(iv)"
+      ],
+      "chars": 1355,
+      "first_line": "12 Supernova School is a school which specialises in sports. The mean reaction time of"
+    }
+  ]
+}

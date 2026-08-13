@@ -1,0 +1,163 @@
+{
+  "paper_id": 11,
+  "rel_path": "data/pdfs/2025_HCI_prelim_2_qp.pdf",
+  "school_code": "HCI",
+  "year": 2025,
+  "paper_no": 2,
+  "doc_type": "qp",
+  "pages": 5,
+  "needs_ocr_pages": [],
+  "confidence": 1.0,
+  "signals": {
+    "numbering": 1.0,
+    "sequence": 1.0,
+    "marks": 1.0,
+    "count": 1.0,
+    "marks_sum": 1.0,
+    "gaps": 0.0,
+    "total_marks": 100.0
+  },
+  "notes": [],
+  "questions": [
+    {
+      "q_number": 1,
+      "page_start": 1,
+      "page_end": 1,
+      "marks_total": 7,
+      "part_labels": [
+        "(a)",
+        "(b)"
+      ],
+      "chars": 227,
+      "first_line": "1 The region A is bounded by the curves y = x + 1 , y = 7 \u2212 2 x , the x-axis and the"
+    },
+    {
+      "q_number": 2,
+      "page_start": 1,
+      "page_end": 1,
+      "marks_total": 11,
+      "part_labels": [
+        "(a)",
+        "(b)"
+      ],
+      "chars": 356,
+      "first_line": "2 It is given that y l n s i n x"
+    },
+    {
+      "q_number": 3,
+      "page_start": 1,
+      "page_end": 2,
+      "marks_total": 13,
+      "part_labels": [
+        "(a)",
+        "(b)",
+        "(c)",
+        "(d)",
+        "(e)"
+      ],
+      "chars": 568,
+      "first_line": "3 The parametric equations of the curve C are"
+    },
+    {
+      "q_number": 4,
+      "page_start": 2,
+      "page_end": 2,
+      "marks_total": 9,
+      "part_labels": [
+        "(a)",
+        "(ii)",
+        "(iii)",
+        "(b)"
+      ],
+      "chars": 517,
+      "first_line": "4 Let A, B and C be the points on the same plane with position vectors a, b and c"
+    },
+    {
+      "q_number": 5,
+      "page_start": 2,
+      "page_end": 2,
+      "marks_total": 6,
+      "part_labels": [
+        "(a)",
+        "(i)",
+        "(ii)",
+        "(b)"
+      ],
+      "chars": 436,
+      "first_line": "5 The eleven letters in the word INSPIRATION are each printed on separate, identical"
+    },
+    {
+      "q_number": 6,
+      "page_start": 2,
+      "page_end": 3,
+      "marks_total": 8,
+      "part_labels": [
+        "(a)",
+        "(b)",
+        "(c)"
+      ],
+      "chars": 857,
+      "first_line": "6 A basketball free throw game involves a team of two players, Ben and John. The game"
+    },
+    {
+      "q_number": 7,
+      "page_start": 3,
+      "page_end": 3,
+      "marks_total": 7,
+      "part_labels": [
+        "(a)",
+        "(b)",
+        "(c)",
+        "(d)",
+        "(e)"
+      ],
+      "chars": 1193,
+      "first_line": "7 An ice-cream seller records the monthly ice cream sales, s thousands dollars for different"
+    },
+    {
+      "q_number": 8,
+      "page_start": 3,
+      "page_end": 4,
+      "marks_total": 11,
+      "part_labels": [
+        "(a)",
+        "(b)",
+        "(c)",
+        "(d)"
+      ],
+      "chars": 1165,
+      "first_line": "8 A food producer claims that the mean mass of a can of beans it produces is 425 g."
+    },
+    {
+      "q_number": 9,
+      "page_start": 4,
+      "page_end": 5,
+      "marks_total": 12,
+      "part_labels": [
+        "(a)",
+        "(b)",
+        "(c)",
+        "(d)",
+        "(e)"
+      ],
+      "chars": 1187,
+      "first_line": "9 In each round of a treasure hunt game, a player randomly selects a spot from a large"
+    },
+    {
+      "q_number": 10,
+      "page_start": 5,
+      "page_end": 5,
+      "marks_total": 16,
+      "part_labels": [
+        "(a)",
+        "(b)",
+        "(c)",
+        "(d)",
+        "(e)",
+        "(f)"
+      ],
+      "chars": 2055,
+      "first_line": "10 In this question you should state the parameters of any distributions you use."
+    }
+  ]
+}

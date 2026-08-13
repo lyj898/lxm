@@ -1,0 +1,179 @@
+{
+  "paper_id": 1,
+  "rel_path": "data/pdfs/2025_ACJC_prelim_1_qp.pdf",
+  "school_code": "ACJC",
+  "year": 2025,
+  "paper_no": 1,
+  "doc_type": "qp",
+  "pages": 8,
+  "needs_ocr_pages": [],
+  "confidence": 1.0,
+  "signals": {
+    "numbering": 1.0,
+    "sequence": 1.0,
+    "marks": 1.0,
+    "count": 1.0,
+    "marks_sum": 1.0,
+    "gaps": 0.0,
+    "total_marks": 100.0
+  },
+  "notes": [],
+  "questions": [
+    {
+      "q_number": 1,
+      "page_start": 2,
+      "page_end": 2,
+      "marks_total": 6,
+      "part_labels": [
+        "(a)",
+        "(b)"
+      ],
+      "chars": 191,
+      "first_line": "1 (a) Without using a calculator, solve the inequality"
+    },
+    {
+      "q_number": 2,
+      "page_start": 2,
+      "page_end": 2,
+      "marks_total": 5,
+      "part_labels": [
+        "(a)",
+        "(b)"
+      ],
+      "chars": 311,
+      "first_line": "2 The graph of y ="
+    },
+    {
+      "q_number": 3,
+      "page_start": 2,
+      "page_end": 2,
+      "marks_total": 5,
+      "part_labels": [
+        "(a)",
+        "(b)"
+      ],
+      "chars": 222,
+      "first_line": "3 It is given that y = x x y , where x \uf03e 0 , y \uf03e 0 ."
+    },
+    {
+      "q_number": 4,
+      "page_start": 2,
+      "page_end": 2,
+      "marks_total": 6,
+      "part_labels": [],
+      "chars": 287,
+      "first_line": "4 The region R is bounded by the curve with equation y= xlnx, the lines x = e , x = e 2 and"
+    },
+    {
+      "q_number": 5,
+      "page_start": 2,
+      "page_end": 3,
+      "marks_total": 6,
+      "part_labels": [
+        "(a)",
+        "(b)",
+        "(c)"
+      ],
+      "chars": 566,
+      "first_line": "5 Relative to the origin O, the points A and B have non-zero and non-parallel position vectors"
+    },
+    {
+      "q_number": 6,
+      "page_start": 3,
+      "page_end": 3,
+      "marks_total": 6,
+      "part_labels": [
+        "(a)",
+        "(b)"
+      ],
+      "chars": 670,
+      "first_line": "6"
+    },
+    {
+      "q_number": 7,
+      "page_start": 3,
+      "page_end": 4,
+      "marks_total": 7,
+      "part_labels": [
+        "(a)",
+        "(b)"
+      ],
+      "chars": 567,
+      "first_line": "7 A freshly brewed cup of tea, initially at a temperature of 85\u00b0C, is left out to cool in a room"
+    },
+    {
+      "q_number": 8,
+      "page_start": 4,
+      "page_end": 5,
+      "marks_total": 10,
+      "part_labels": [
+        "(a)",
+        "(ii)",
+        "(iii)",
+        "(b)",
+        "(i)"
+      ],
+      "chars": 1202,
+      "first_line": "8 The curve with equation"
+    },
+    {
+      "q_number": 9,
+      "page_start": 5,
+      "page_end": 5,
+      "marks_total": 11,
+      "part_labels": [
+        "(a)",
+        "(b)",
+        "(c)",
+        "(d)"
+      ],
+      "chars": 757,
+      "first_line": "9 The planes"
+    },
+    {
+      "q_number": 10,
+      "page_start": 5,
+      "page_end": 6,
+      "marks_total": 13,
+      "part_labels": [
+        "(a)",
+        "(b)",
+        "(i)",
+        "(ii)",
+        "(iii)"
+      ],
+      "chars": 678,
+      "first_line": "10 Do not use a calculator in answering this question."
+    },
+    {
+      "q_number": 11,
+      "page_start": 6,
+      "page_end": 7,
+      "marks_total": 12,
+      "part_labels": [
+        "(a)",
+        "(b)",
+        "(c)",
+        "(ii)",
+        "(d)"
+      ],
+      "chars": 950,
+      "first_line": "11 The curve"
+    },
+    {
+      "q_number": 12,
+      "page_start": 7,
+      "page_end": 8,
+      "marks_total": 13,
+      "part_labels": [
+        "(a)",
+        "(b)",
+        "(c)",
+        "(d)",
+        "(e)"
+      ],
+      "chars": 1673,
+      "first_line": "12 Sarah, a Singaporean Citizen, started a 4-year undergraduate Computing course at the"
+    }
+  ]
+}
