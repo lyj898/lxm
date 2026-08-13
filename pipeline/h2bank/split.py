@@ -486,7 +486,24 @@ def main(argv: list[str] | None = None) -> int:
     conn = init_db(cfg.db_path, cfg.schema_path)
     summaries = run(cfg, conn, args.paper_ids)
     print_summary(summaries)
+
+    # Re-splitting replaces question rows, and question_topics cascades on
+    # delete - so a split always invalidates tags. Say so loudly: committing the
+    # database between these two stages ships a bank with no topics.
+    untagged = conn.execute(
+        """SELECT COUNT(*) AS c FROM questions q
+           WHERE NOT EXISTS (
+               SELECT 1 FROM question_topics qt WHERE qt.question_id = q.id)"""
+    ).fetchone()["c"]
+    if untagged:
+        print(
+            f"\nWARNING: {untagged} question(s) now have no topic tag - splitting "
+            f"dropped them.\n         Run `python -m h2bank.tag` before committing "
+            f"data/bank.sqlite."
+        )
     conn.close()
+    # Deliberately exit 0: the tag stage runs straight after this one in the
+    # pipeline, so a non-zero exit here would fail every run.
     return 0
 
 

@@ -344,15 +344,23 @@ def main(argv: list[str] | None = None) -> int:
     groups.sort(key=lambda g: (-g.year, -g.complete_papers, g.school_code))
 
     if not args.download_only:
-        cfg.candidates_path.parent.mkdir(parents=True, exist_ok=True)
-        cfg.candidates_path.write_text(
-            json.dumps(
-                {"n_groups": len(groups), "groups": [g.summary() for g in groups]},
-                indent=2,
-            ),
-            encoding="utf-8",
-        )
-        print(f"\ndiscovered {len(groups)} school-exams -> {cfg.candidates_path}")
+        if not groups and cfg.candidates_path.is_file():
+            # A source outage or a layout change must not replace a good
+            # candidates file with an empty one.
+            log.warning(
+                "discovery found nothing; keeping the existing %s untouched",
+                cfg.candidates_path.name,
+            )
+        else:
+            cfg.candidates_path.parent.mkdir(parents=True, exist_ok=True)
+            cfg.candidates_path.write_text(
+                json.dumps(
+                    {"n_groups": len(groups), "groups": [g.summary() for g in groups]},
+                    indent=2,
+                ),
+                encoding="utf-8",
+            )
+            print(f"\ndiscovered {len(groups)} school-exams -> {cfg.candidates_path}")
         _print_candidates(groups)
 
     if args.discover_only:
