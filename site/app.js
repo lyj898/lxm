@@ -65,7 +65,9 @@ async function loadDb() {
   let lastError = null;
   for (const path of DB_CANDIDATES) {
     try {
-      const resp = await fetch(path);
+      // Revalidate rather than trusting the cache: the pipeline rewrites this
+      // file, so a cached copy silently shows a stale bank (e.g. no topics).
+      const resp = await fetch(path, { cache: "no-cache" });
       if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
       bytes = new Uint8Array(await resp.arrayBuffer());
       dataRoot = path.slice(0, path.indexOf("data/"));
