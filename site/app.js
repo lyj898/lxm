@@ -146,24 +146,30 @@ async function renderSlice(doc, pageNo, yTop, yBottom, cssWidth) {
   const ctx = canvas.getContext("2d");
   ctx.fillStyle = "#fff";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
-  const task = page.render({
-    canvasContext: ctx,
-    viewport,
-    // Scale for the device, then shift the slice's top edge up to y = 0.
-    transform: [dpr, 0, 0, dpr, 0, -top * scale * dpr],
-  });
-  // Watchdog: if the tab is hidden mid-render the rAF loop stops and this never
-  // settles, so bail out and let the visibility handler retry.
-  let timer;
-  try {
-    await Promise.race([
+  // Scale for the device, then shift the slice's top edge up to y = 0.
+  const transform = [dpr, 0, 0, dpr, 0, -top * scale * dpr];
+
+  const attempt = (intent) => {
+    const task = page.render({ canvasContext: ctx, viewport, transform, intent });
+    let timer;
+    return Promise.race([
       task.promise,
       new Promise((_, reject) => {
-        timer = setTimeout(() => reject(new Error("render-timeout")), 12000);
+        timer = setTimeout(() => reject(new Error("render-timeout")), 8000);
       }),
-    ]);
-  } finally {
-    clearTimeout(timer);
+    ]).finally(() => clearTimeout(timer));
+  };
+
+  try {
+    await attempt(undefined);
+  } catch (err) {
+    if (err?.message !== "render-timeout") throw err;
+    // pdf.js drives the display path with requestAnimationFrame, which is
+    // frozen while the tab is hidden. The print path does not use it, so a
+    // background tab still gets its pixels instead of a blank card.
+    ctx.fillStyle = "#fff";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    await attempt("print");
   }
   return canvas;
 }
