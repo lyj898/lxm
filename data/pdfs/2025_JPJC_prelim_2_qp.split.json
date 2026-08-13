@@ -1,0 +1,181 @@
+{
+  "paper_id": 14,
+  "rel_path": "data/pdfs/2025_JPJC_prelim_2_qp.pdf",
+  "school_code": "JPJC",
+  "year": 2025,
+  "paper_no": 2,
+  "doc_type": "qp",
+  "pages": 8,
+  "needs_ocr_pages": [
+    8
+  ],
+  "confidence": 1.0,
+  "signals": {
+    "numbering": 1.0,
+    "sequence": 1.0,
+    "marks": 1.0,
+    "count": 1.0,
+    "marks_sum": 1.0,
+    "gaps": 0.0,
+    "total_marks": 100.0
+  },
+  "notes": [
+    "1 of 8 pages yielded <50 chars (pages [8]) - flagged needs_ocr, OCR not attempted"
+  ],
+  "questions": [
+    {
+      "q_number": 1,
+      "page_start": 2,
+      "page_end": 2,
+      "marks_total": 9,
+      "part_labels": [
+        "(i)",
+        "(ii)",
+        "(iii)"
+      ],
+      "chars": 921,
+      "first_line": "1 To prepare for the General Election, a political party studies the effectiveness of spreading"
+    },
+    {
+      "q_number": 2,
+      "page_start": 2,
+      "page_end": 3,
+      "marks_total": 10,
+      "part_labels": [
+        "(i)",
+        "(ii)",
+        "(iii)",
+        "(iv)"
+      ],
+      "chars": 664,
+      "first_line": "2 With reference to the origin O, the points A, P and Q have position vectors a, p and q"
+    },
+    {
+      "q_number": 3,
+      "page_start": 3,
+      "page_end": 3,
+      "marks_total": 10,
+      "part_labels": [
+        "(i)",
+        "(ii)",
+        "(iii)",
+        "(iv)"
+      ],
+      "chars": 524,
+      "first_line": "3 The curve C has parametric equations"
+    },
+    {
+      "q_number": 4,
+      "page_start": 3,
+      "page_end": 4,
+      "marks_total": 11,
+      "part_labels": [
+        "(a)",
+        "(b)",
+        "(i)",
+        "(ii)"
+      ],
+      "chars": 763,
+      "first_line": "4 Do not use a calculator in answering this question."
+    },
+    {
+      "q_number": 5,
+      "page_start": 4,
+      "page_end": 4,
+      "marks_total": 6,
+      "part_labels": [
+        "(i)",
+        "(ii)",
+        "(iii)"
+      ],
+      "chars": 669,
+      "first_line": "5 In a strategy game called Colour Clash, players draw coloured orbs from a magical pouch to"
+    },
+    {
+      "q_number": 6,
+      "page_start": 4,
+      "page_end": 5,
+      "marks_total": 7,
+      "part_labels": [
+        "(i)",
+        "(ii)",
+        "(iii)",
+        "(iv)"
+      ],
+      "chars": 911,
+      "first_line": "6 A particular streaming service platform claims that the average time a user spends watching"
+    },
+    {
+      "q_number": 7,
+      "page_start": 5,
+      "page_end": 5,
+      "marks_total": 7,
+      "part_labels": [
+        "(i)",
+        "(ii)",
+        "(iii)"
+      ],
+      "chars": 560,
+      "first_line": "7 In a game, a player selects one ball at random from a bag which contains four balls numbered"
+    },
+    {
+      "q_number": 8,
+      "page_start": 5,
+      "page_end": 6,
+      "marks_total": 8,
+      "part_labels": [
+        "(i)",
+        "(ii)",
+        "(iii)",
+        "(iv)"
+      ],
+      "chars": 1335,
+      "first_line": "8 A company makes portable speakers. Some speakers turn out to be faulty. Each carton has 24"
+    },
+    {
+      "q_number": 9,
+      "page_start": 6,
+      "page_end": 6,
+      "marks_total": 9,
+      "part_labels": [
+        "(i)",
+        "(ii)",
+        "(iii)"
+      ],
+      "chars": 387,
+      "first_line": "9 The events A and B are such that P(B)= ,"
+    },
+    {
+      "q_number": 10,
+      "page_start": 6,
+      "page_end": 7,
+      "marks_total": 12,
+      "part_labels": [
+        "(i)",
+        "(ii)",
+        "(iii)",
+        "(iv)"
+      ],
+      "chars": 1675,
+      "first_line": "10 In this question, you should state clearly all the distributions that you use, together with"
+    },
+    {
+      "q_number": 11,
+      "page_start": 7,
+      "page_end": 8,
+      "marks_total": 11,
+      "part_labels": [
+        "(a)",
+        "(i)",
+        "(ii)",
+        "(b)",
+        "(iii)",
+        "(iv)",
+        "(v)",
+        "(vi)"
+      ],
+      "chars": 1544,
+      "first_line": "11 (a) Draw separate scatter diagrams, each with 7 points, all in the first quadrant, which"
+    }
+  ]
+}

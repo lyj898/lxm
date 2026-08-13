@@ -1,0 +1,7 @@
+requests>=2.32
+beautifulsoup4>=4.12
+pdfplumber>=0.11
+pymupdf>=1.24
+pikepdf>=9.0
+anthropic>=0.40
+tenacity>=9.0

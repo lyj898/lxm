@@ -1,0 +1,59 @@
+# h2bank pipeline configuration.
+# Every stage reads this file; CLI flags override individual values.
+
+[paths]
+db = "data/bank.sqlite"
+pdf_dir = "data/pdfs"
+schema = "schema.sql"
+candidates = "data/candidates.json"
+
+[crawl]
+# Number of *school-exams* to download per run. One school-exam is one
+# (school, year, exam_type) group: Paper 1 and Paper 2 are two parts of the same
+# exam, so both papers - and their solutions - come from one archive download.
+# A cap of 5 therefore means 5 archive downloads yielding 10 paper rows.
+#
+# 0 makes the crawl stage a no-op, which is what the scheduled workflow should do
+# until the pilot is deliberately scaled up. Raise this to scale beyond the
+# pilot. The pilot run used `--cap 5`.
+download_cap = 0
+
+# How many distinct school-exams discovery should collect before it stops
+# walking listings. Kept a little above the cap so selection has real choice.
+discover_target_exams = 8
+
+user_agent = "h2bank/0.1 (personal study archive; contact: alex@yventures.com.sg)"
+min_delay_seconds = 5.0     # minimum gap between requests to the same host
+timeout_seconds = 60
+max_retries = 5             # exponential backoff on 429 / 5xx
+respect_robots = true
+
+# Hard refusal threshold: never store a file this large.
+max_file_bytes = 99614720   # 95 MiB
+
+# Ordered list of adapters to run; discovery stops once the cap is satisfied.
+sources = ["freetestpaper", "sgtestpaper", "testpapersfree"]
+
+# Only these subject/level candidates are considered.
+subject_keywords = ["h2", "maths", "mathematics", "9758"]
+prefer_year_from = 2025
+
+[compress]
+enabled = true
+target_bytes = 2097152      # 2 MiB; best-effort, never fails the ingest
+
+[split]
+min_chars_per_page = 50     # below this a page is flagged needs_ocr
+expected_questions_min = 10
+expected_questions_max = 13  # HCI 2025 P1 genuinely has 13 questions
+gutter_max_x0 = 120         # a question number must start left of this x0
+# ...and within this many points of the paper's own modal margin. Real question
+# numbers wander by ~4.6pt; the false positives we saw sat 27pt+ in (one indent
+# level), so 6.0 separates them cleanly.
+gutter_tolerance = 6.0
+paper_marks = 100           # H2 Paper 1 and Paper 2 are each 100 marks
+
+[tag]
+model = "claude-haiku-4-5"
+max_output_tokens = 300
+llm_enabled = true

@@ -1,0 +1,183 @@
+{
+  "paper_id": 19,
+  "rel_path": "data/pdfs/2025_MI_prelim_1_qp.pdf",
+  "school_code": "MI",
+  "year": 2025,
+  "paper_no": 1,
+  "doc_type": "qp",
+  "pages": 8,
+  "needs_ocr_pages": [
+    8
+  ],
+  "confidence": 0.97,
+  "signals": {
+    "numbering": 1.0,
+    "sequence": 1.0,
+    "marks": 1.0,
+    "count": 1.0,
+    "marks_sum": 0.85,
+    "gaps": 0.0,
+    "total_marks": 97.0
+  },
+  "notes": [
+    "1 of 8 pages yielded <50 chars (pages [8]) - flagged needs_ocr, OCR not attempted",
+    "marks total 97, expected 100"
+  ],
+  "questions": [
+    {
+      "q_number": 1,
+      "page_start": 2,
+      "page_end": 2,
+      "marks_total": 4,
+      "part_labels": [],
+      "chars": 276,
+      "first_line": "1 In this question you may use expansions from the List of Formulae (MF27)."
+    },
+    {
+      "q_number": 2,
+      "page_start": 2,
+      "page_end": 2,
+      "marks_total": 4,
+      "part_labels": [
+        "(i)",
+        "(ii)"
+      ],
+      "chars": 376,
+      "first_line": "2 The diagram below shows the curve with equation y = f ( x ) where f ( x ) ="
+    },
+    {
+      "q_number": 3,
+      "page_start": 2,
+      "page_end": 3,
+      "marks_total": 7,
+      "part_labels": [
+        "(a)",
+        "(b)",
+        "(c)"
+      ],
+      "chars": 87,
+      "first_line": "3 (a) Find dx. [2]"
+    },
+    {
+      "q_number": 4,
+      "page_start": 3,
+      "page_end": 3,
+      "marks_total": 6,
+      "part_labels": [
+        "(i)",
+        "(ii)"
+      ],
+      "chars": 1057,
+      "first_line": "4 Three different blends of coffee beans \u2013 Blend A Blend B and Blend C \u2013 are sold at"
+    },
+    {
+      "q_number": 5,
+      "page_start": 3,
+      "page_end": 4,
+      "marks_total": 4,
+      "part_labels": [
+        "(i)",
+        "(ii)"
+      ],
+      "chars": 313,
+      "first_line": "5 (i) Using the substitution show that"
+    },
+    {
+      "q_number": 6,
+      "page_start": 4,
+      "page_end": 5,
+      "marks_total": 7,
+      "part_labels": [
+        "(i)",
+        "(ii)"
+      ],
+      "chars": 518,
+      "first_line": "6 A company produces customised badges. The diagram below shows the design of one"
+    },
+    {
+      "q_number": 7,
+      "page_start": 5,
+      "page_end": 5,
+      "marks_total": 7,
+      "part_labels": [
+        "(i)",
+        "(ii)",
+        "(iii)",
+        "(iv)"
+      ],
+      "chars": 1157,
+      "first_line": "7 Epidemiologists are modelling the spread of an infectious disease in a town. The"
+    },
+    {
+      "q_number": 8,
+      "page_start": 5,
+      "page_end": 6,
+      "marks_total": 8,
+      "part_labels": [
+        "(i)",
+        "(ii)",
+        "(iii)"
+      ],
+      "chars": 338,
+      "first_line": "8 It is given that y=e ."
+    },
+    {
+      "q_number": 9,
+      "page_start": 6,
+      "page_end": 6,
+      "marks_total": 12,
+      "part_labels": [
+        "(i)",
+        "(ii)",
+        "(iii)",
+        "(iv)"
+      ],
+      "chars": 759,
+      "first_line": "9 The coordinates of point A and B are (1 2 3) and (17 10 19) respectively. The line l"
+    },
+    {
+      "q_number": 10,
+      "page_start": 6,
+      "page_end": 7,
+      "marks_total": 12,
+      "part_labels": [
+        "(i)",
+        "(ii)",
+        "(iii)"
+      ],
+      "chars": 362,
+      "first_line": "10 The curves C and C are given by the equations"
+    },
+    {
+      "q_number": 11,
+      "page_start": 7,
+      "page_end": 7,
+      "marks_total": 14,
+      "part_labels": [
+        "(i)",
+        "(ii)",
+        "(iii)",
+        "(iv)",
+        "(v)"
+      ],
+      "chars": 788,
+      "first_line": "11 Referred to the origin"
+    },
+    {
+      "q_number": 12,
+      "page_start": 7,
+      "page_end": 8,
+      "marks_total": 12,
+      "part_labels": [
+        "(i)",
+        "(ii)",
+        "(iii)",
+        "(iv)",
+        "(v)",
+        "(vi)"
+      ],
+      "chars": 1088,
+      "first_line": "12 A tank initially contains 100 litres of pure water. A brine solution with a salt"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="googlebot" content="noindex,nofollow">
+<title>H2 Maths Question Bank</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <h1>H2 Maths Question Bank</h1>
+    <p class="sub">Singapore JC prelim papers &middot; syllabus 9758</p>
+  </div>
+</header>
+
+<main>
+  <section class="filters" aria-label="Filters">
+    <div class="filter-row">
+      <label class="field">
+        <span>Search</span>
+        <input type="search" id="f-text" placeholder="keyword in question text&hellip;" autocomplete="off">
+      </label>
+    </div>
+    <div class="filter-row">
+      <label class="field">
+        <span>Topic</span>
+        <select id="f-topic"><option value="">All topics</option></select>
+      </label>
+      <label class="field">
+        <span>School</span>
+        <select id="f-school"><option value="">All schools</option></select>
+      </label>
+      <label class="field">
+        <span>Year</span>
+        <select id="f-year"><option value="">All years</option></select>
+      </label>
+    </div>
+    <div class="filter-row">
+      <label class="field">
+        <span>Min marks</span>
+        <input type="number" id="f-marks-min" min="0" max="30" placeholder="0" inputmode="numeric">
+      </label>
+      <label class="field">
+        <span>Max marks</span>
+        <input type="number" id="f-marks-max" min="0" max="30" placeholder="30" inputmode="numeric">
+      </label>
+      <label class="field checkbox">
+        <input type="checkbox" id="f-has-ms">
+        <span>Has solutions</span>
+      </label>
+    </div>
+    <div class="filter-row actions">
+      <button type="button" id="f-reset" class="ghost">Reset filters</button>
+      <output id="count" class="count" aria-live="polite">Loading&hellip;</output>
+    </div>
+  </section>
+
+  <section id="results" class="results" aria-live="polite"></section>
+  <p id="empty" class="empty" hidden>No questions match those filters.</p>
+</main>
+
+<dialog id="viewer">
+  <div class="viewer-bar">
+    <strong id="viewer-title">Paper</strong>
+    <div class="viewer-nav">
+      <button type="button" id="pdf-prev" aria-label="Previous page">&larr;</button>
+      <span id="pdf-page">1 / 1</span>
+      <button type="button" id="pdf-next" aria-label="Next page">&rarr;</button>
+      <a id="pdf-raw" href="#" target="_blank" rel="noopener" class="ghost">Open PDF</a>
+      <button type="button" id="viewer-close" class="ghost">Close</button>
+    </div>
+  </div>
+  <div class="viewer-canvas-wrap"><canvas id="pdf-canvas"></canvas></div>
+  <p id="viewer-error" class="empty" hidden></p>
+</dialog>
+
+<footer class="site-footer">
+  <p>Personal study archive. Papers &copy; their respective schools. Contact for removal.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/sql-wasm.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+{
+  "paper_id": 7,
+  "rel_path": "data/pdfs/2025_EJC_prelim_1_qp.pdf",
+  "school_code": "EJC",
+  "year": 2025,
+  "paper_no": 1,
+  "doc_type": "qp",
+  "pages": 7,
+  "needs_ocr_pages": [],
+  "confidence": 1.0,
+  "signals": {
+    "numbering": 1.0,
+    "sequence": 1.0,
+    "marks": 1.0,
+    "count": 1.0,
+    "marks_sum": 1.0,
+    "gaps": 0.0,
+    "total_marks": 100.0
+  },
+  "notes": [],
+  "questions": [
+    {
+      "q_number": 1,
+      "page_start": 2,
+      "page_end": 2,
+      "marks_total": 5,
+      "part_labels": [
+        "(a)",
+        "(b)"
+      ],
+      "chars": 138,
+      "first_line": "1 (a) Solve the inequality"
+    },
+    {
+      "q_number": 2,
+      "page_start": 2,
+      "page_end": 3,
+      "marks_total": 6,
+      "part_labels": [],
+      "chars": 459,
+      "first_line": "2 Pete has 180 cm of wire. He bends it to form the outline of his brand logo, which consists of a semicircle"
+    },
+    {
+      "q_number": 3,
+      "page_start": 3,
+      "page_end": 3,
+      "marks_total": 8,
+      "part_labels": [
+        "(a)",
+        "(b)",
+        "(c)"
+      ],
+      "chars": 428,
+      "first_line": "3 In the right-angled triangle ABC, angle C is a right angle. A B = 1 3 c m , B C = 5 c m and X is a point on BC"
+    },
+    {
+      "q_number": 4,
+      "page_start": 3,
+      "page_end": 4,
+      "marks_total": 9,
+      "part_labels": [
+        "(a)",
+        "(b)",
+        "(c)"
+      ],
+      "chars": 439,
+      "first_line": "4 The diagram below shows the graph of y = f ( 2 x ) . The graph has a turning point at ( 2 , 0 ) , and asymptotes"
+    },
+    {
+      "q_number": 5,
+      "page_start": 4,
+      "page_end": 5,
+      "marks_total": 9,
+      "part_labels": [
+        "(a)",
+        "(b)",
+        "(c)",
+        "(d)"
+      ],
+      "chars": 644,
+      "first_line": "5 The diagram shows the curve with equation y ="
+    },
+    {
+      "q_number": 6,
+      "page_start": 5,
+      "page_end": 5,
+      "marks_total": 9,
+      "part_labels": [
+        "(a)",
+        "(b)",
+        "(c)"
+      ],
+      "chars": 539,
+      "first_line": "6 There are three distinct points A, B and P. The point P lies on the circle with centre O and diameter AB. Relative"
+    },
+    {
+      "q_number": 7,
+      "page_start": 5,
+      "page_end": 5,
+      "marks_total": 9,
+      "part_labels": [
+        "(a)",
+        "(b)",
+        "(c)"
+      ],
+      "chars": 455,
+      "first_line": "7 Do not use a calculator in answering this question."
+    },
+    {
+      "q_number": 8,
+      "page_start": 5,
+      "page_end": 6,
+      "marks_total": 10,
+      "part_labels": [
+        "(a)",
+        "(b)",
+        "(c)"
+      ],
+      "chars": 356,
+      "first_line": "8 Do not use a calculator in answering this question."
+    },
+    {
+      "q_number": 9,
+      "page_start": 6,
+      "page_end": 6,
+      "marks_total": 11,
+      "part_labels": [
+        "(a)",
+        "(ii)",
+        "(b)",
+        "(i)",
+        "(c)"
+      ],
+      "chars": 645,
+      "first_line": "9 (a) (i) State the coordinates of the turning points of the graph of y = x 3 \u2212 3 x 2 \u2212 9 x + 5 . [1]"
+    },
+    {
+      "q_number": 10,
+      "page_start": 6,
+      "page_end": 7,
+      "marks_total": 12,
+      "part_labels": [
+        "(a)",
+        "(b)",
+        "(c)"
+      ],
+      "chars": 171,
+      "first_line": "10 (a) Find \uf0f2 ex\u22121dx, leaving your answer in exact form. [4]"
+    },
+    {
+      "q_number": 11,
+      "page_start": 7,
+      "page_end": 7,
+      "marks_total": 12,
+      "part_labels": [
+        "(a)",
+        "(b)",
+        "(c)",
+        "(d)",
+        "(e)"
+      ],
+      "chars": 1663,
+      "first_line": "11 A cylindrical container of height h metres is originally completely filled with water. The water is flowing out"
+    }
+  ]
+}

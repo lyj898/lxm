@@ -1,0 +1,187 @@
+{
+  "paper_id": 13,
+  "rel_path": "data/pdfs/2025_JPJC_prelim_1_qp.pdf",
+  "school_code": "JPJC",
+  "year": 2025,
+  "paper_no": 1,
+  "doc_type": "qp",
+  "pages": 8,
+  "needs_ocr_pages": [
+    8
+  ],
+  "confidence": 1.0,
+  "signals": {
+    "numbering": 1.0,
+    "sequence": 1.0,
+    "marks": 1.0,
+    "count": 1.0,
+    "marks_sum": 1.0,
+    "gaps": 0.0,
+    "total_marks": 100.0
+  },
+  "notes": [
+    "1 of 8 pages yielded <50 chars (pages [8]) - flagged needs_ocr, OCR not attempted"
+  ],
+  "questions": [
+    {
+      "q_number": 1,
+      "page_start": 2,
+      "page_end": 2,
+      "marks_total": 6,
+      "part_labels": [
+        "(i)",
+        "(ii)"
+      ],
+      "chars": 288,
+      "first_line": "1 The curve C has equation y ="
+    },
+    {
+      "q_number": 2,
+      "page_start": 2,
+      "page_end": 2,
+      "marks_total": 6,
+      "part_labels": [
+        "(i)",
+        "(ii)"
+      ],
+      "chars": 236,
+      "first_line": "2 (i) Find, in terms of a, the roots of the equation"
+    },
+    {
+      "q_number": 3,
+      "page_start": 2,
+      "page_end": 3,
+      "marks_total": 4,
+      "part_labels": [],
+      "chars": 325,
+      "first_line": "3"
+    },
+    {
+      "q_number": 4,
+      "page_start": 3,
+      "page_end": 3,
+      "marks_total": 5,
+      "part_labels": [
+        "(i)",
+        "(ii)",
+        "(iii)"
+      ],
+      "chars": 358,
+      "first_line": "4 Functions f and g are defined by"
+    },
+    {
+      "q_number": 5,
+      "page_start": 3,
+      "page_end": 4,
+      "marks_total": 9,
+      "part_labels": [
+        "(a)",
+        "(i)",
+        "(ii)",
+        "(iii)",
+        "(b)"
+      ],
+      "chars": 752,
+      "first_line": "5 (a) The curves C"
+    },
+    {
+      "q_number": 6,
+      "page_start": 4,
+      "page_end": 4,
+      "marks_total": 8,
+      "part_labels": [
+        "(i)",
+        "(ii)"
+      ],
+      "chars": 333,
+      "first_line": "6 (i) Find \uf0f2 x 2 e \u2212 2 x d x . [4]"
+    },
+    {
+      "q_number": 7,
+      "page_start": 4,
+      "page_end": 4,
+      "marks_total": 10,
+      "part_labels": [
+        "(a)",
+        "(ii)",
+        "(b)"
+      ],
+      "chars": 217,
+      "first_line": "7 (a) (i) Find \uf0f2"
+    },
+    {
+      "q_number": 8,
+      "page_start": 4,
+      "page_end": 5,
+      "marks_total": 9,
+      "part_labels": [
+        "(a)",
+        "(b)",
+        "(i)",
+        "(ii)",
+        "(iii)"
+      ],
+      "chars": 378,
+      "first_line": "8 (a) The first three terms of a sequence are given by u =9,"
+    },
+    {
+      "q_number": 9,
+      "page_start": 5,
+      "page_end": 5,
+      "marks_total": 11,
+      "part_labels": [
+        "(i)",
+        "(ii)",
+        "(iii)",
+        "(iv)",
+        "(v)",
+        "(vi)"
+      ],
+      "chars": 687,
+      "first_line": "9 It is given that f(x) ="
+    },
+    {
+      "q_number": 10,
+      "page_start": 5,
+      "page_end": 6,
+      "marks_total": 9,
+      "part_labels": [
+        "(a)",
+        "(b)",
+        "(i)",
+        "(ii)"
+      ],
+      "chars": 682,
+      "first_line": "10 (a) Show that y = l n"
+    },
+    {
+      "q_number": 11,
+      "page_start": 6,
+      "page_end": 7,
+      "marks_total": 11,
+      "part_labels": [
+        "(i)",
+        "(ii)",
+        "(iii)",
+        "(iv)",
+        "(v)"
+      ],
+      "chars": 1281,
+      "first_line": "11 A company posted a video on a social media platform to advertise a new product. The video"
+    },
+    {
+      "q_number": 12,
+      "page_start": 7,
+      "page_end": 8,
+      "marks_total": 12,
+      "part_labels": [
+        "(i)",
+        "(ii)",
+        "(iii)",
+        "(iv)"
+      ],
+      "chars": 1376,
+      "first_line": "12 A designer wants to construct an inclined roof that is attached to a vertical rectangular wall,"
+    }
+  ]
+}
