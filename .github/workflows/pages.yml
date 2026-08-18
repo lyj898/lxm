@@ -10,6 +10,13 @@ on:
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
+  # A push made by the pipeline's GITHUB_TOKEN does NOT trigger `on: push` -
+  # GitHub blocks that to prevent workflows re-triggering themselves. Without
+  # this, the scheduled run commits a refreshed bank that is never published.
+  workflow_run:
+    workflows: ["Pipeline (crawl, split, tag)"]
+    types: [completed]
+
 permissions:
   contents: read
   pages: write
@@ -23,11 +30,20 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    # Do not publish the output of a pipeline run that failed.
+    if: >-
+      github.event_name != 'workflow_run' ||
+      github.event.workflow_run.conclusion == 'success'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v5
+        with:
+          # workflow_run reports the SHA that started the pipeline, which is the
+          # commit *before* the bot's data commit. The site only ever deploys
+          # from main, so take main's tip.
+          ref: main
 
       - name: Assemble the artifact
         run: |
